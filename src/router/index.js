@@ -22,7 +22,7 @@ const routes = [
         component: () => import('../views/FrontEnd/ProductsView.vue'),
       },
       {
-        path: 'product',
+        path: 'product/:id',
         name: 'product',
         component: () => import('../views/FrontEnd/ProductView.vue'),
       },
