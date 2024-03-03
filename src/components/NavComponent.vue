@@ -27,11 +27,11 @@
           <router-link to="/product" class="nav-item nav-link me-4 active"
             >Product</router-link
           >
-          <a v-if="this.carts.carts" class="nav-item nav-link"
+          <a v-if="this.carts" class="nav-item nav-link"
             ><i class="bi bi-cart position-absolute"><span
                class="position-absolute
              top-0 start-100 translate-middle badge rounded-pill bg-danger">
-             {{ this.carts.carts.length }}
+             {{ this.carts?.length }}
              <span class="visually-hidden">unread messages</span></span></i></a>
         </div>
       </div>
@@ -41,25 +41,20 @@
 
 <script>
 
-import axios from 'axios';
+// import axios from 'axios';
 
-const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
+import { mapActions, mapState } from 'pinia';
+
+import cartPinia from '@/stores/cartPinia';
+
+// const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 export default {
-  data() {
-    return {
-      carts: [],
-    };
+  computed: {
+    ...mapState(cartPinia, ['carts', 'final_total', 'total']),
   },
   methods: {
-    getCarts() {
-      axios.get(`${VITE_API_URL}/api/${VITE_API_NAME}/cart`).then((res) => {
-        console.log('navRes', res);
-        this.carts = res.data.data;
-        console.log('carts', this.carts);
-        console.log('carts after data received', this.carts);
-      });
-    },
+    ...mapActions(cartPinia, ['getCarts', 'pinia_carts', 'carts']),
   },
   mounted() {
     this.getCarts();
