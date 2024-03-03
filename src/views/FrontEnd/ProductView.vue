@@ -132,6 +132,10 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'pinia';
+
+import cartPinia from '@/stores/cartPinia';
+
 import axios from 'axios';
 
 const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
@@ -153,16 +157,17 @@ export default {
           console.log(this.product);
         });
     },
-    addToCart(id) {
-      const order = {
-        product_id: id,
-        qty: 1,
-      };
-      axios.post(`${VITE_API_URL}api/${VITE_API_NAME}/cart`, { data: order })
-        .then((res) => {
-          console.log(res);
-        });
-    },
+    ...mapActions(cartPinia, ['addToCart']),
+    // addToCart(id) {
+    //   const order = {
+    //     product_id: id,
+    //     qty: 1,
+    //   };
+    //   axios.post(`${VITE_API_URL}api/${VITE_API_NAME}/cart`, { data: order })
+    //     .then((res) => {
+    //       console.log(res);
+    //     });
+    // },
   },
   mounted() {
     this.getProduct();
