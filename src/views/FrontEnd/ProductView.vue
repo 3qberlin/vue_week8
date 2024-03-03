@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-7">
         <div id="carouselExample" class="carousel slide w-100 border">
-          <div class="carousel-inner" style="height: 500px">
+          <div class="carousel-inner" style="max-height: 500px">
             <div
               class="carousel-item"
               v-for="(pic, index) in product.imagesUrl"
