@@ -27,11 +27,41 @@
           <router-link to="/product" class="nav-item nav-link me-4 active"
             >Product</router-link
           >
-          <a class="nav-item nav-link" href="./cart.html"
-            ><i class="fas fa-shopping-cart"></i
-          ></a>
+          <a class="nav-item nav-link"
+            ><i class="bi bi-cart position-absolute"><span
+               class="position-absolute
+             top-0 start-100 translate-middle badge rounded-pill bg-danger">
+             99
+             <span class="visually-hidden">unread messages</span></span></i></a>
         </div>
       </div>
     </nav>
   </div>
 </template>
+
+<script>
+
+import axios from 'axios';
+
+const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
+
+export default {
+  data() {
+    return {
+      carts: [],
+    };
+  },
+  methods: {
+    getCarts() {
+      axios.get(`${VITE_API_URL}/api/${VITE_API_NAME}/cart`).then((res) => {
+        console.log('navRes', res);
+        this.carts = res.data.data;
+        console.log('carts', this.carts);
+      });
+    },
+  },
+  mounted() {
+    this.getCarts();
+  },
+};
+</script>
