@@ -139,7 +139,7 @@
       </div>
       <div class="col-md-8">
         <div class="row">
-          <div class="col-md-6" v-for="item in products" :key="item">
+          <div class="col-md-6" v-for="item in products" :key="item.id">
             <div class="card border-0 mb-4 position-relative position-relative">
               <img
                 :src="item.imagesUrl"
@@ -154,7 +154,7 @@
               </a>
               <div class="card-body p-0">
                 <h4 class="mb-0 mt-3">
-                  <a href="./detail.html">{{ item.title }}</a>
+                  <RouterLink :to="`/product/${item.id}`">{{ item.title }}</RouterLink>
                 </h4>
                 <p class="card-text mb-0">
                   NT${{ item.price }} <span class="text-muted"><del>
@@ -204,7 +204,7 @@ export default {
       const api = `${VITE_API_URL}api/${VITE_API_NAME}/products/all`;
       axios.get(api).then((res) => {
         this.products = res.data.products;
-        console.log('res', res);
+        console.log(res);
       });
     },
   },
