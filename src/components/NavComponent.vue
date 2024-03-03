@@ -27,11 +27,11 @@
           <router-link to="/product" class="nav-item nav-link me-4 active"
             >Product</router-link
           >
-          <a class="nav-item nav-link"
+          <a v-if="this.carts.carts" class="nav-item nav-link"
             ><i class="bi bi-cart position-absolute"><span
                class="position-absolute
              top-0 start-100 translate-middle badge rounded-pill bg-danger">
-             99
+             {{ this.carts.carts.length }}
              <span class="visually-hidden">unread messages</span></span></i></a>
         </div>
       </div>
@@ -57,6 +57,7 @@ export default {
         console.log('navRes', res);
         this.carts = res.data.data;
         console.log('carts', this.carts);
+        console.log('carts after data received', this.carts);
       });
     },
   },
