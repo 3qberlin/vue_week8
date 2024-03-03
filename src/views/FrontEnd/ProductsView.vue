@@ -8,8 +8,9 @@
         >
           <div class="card border-0">
             <div
-              class="card-header px-0 py-4 bg-white border
-               border-bottom-0 border-top border-start-0 border-end-0 rounded-0"
+              class="card-header px-0 py-4 bg-white
+               border border-bottom-0 border-top border-start-0
+                border-end-0 rounded-0"
               id="headingOne"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -17,7 +18,7 @@
               <div
                 class="d-flex justify-content-between align-items-center pe-1"
               >
-                <h4 class="mb-0">Lorem ipsum</h4>
+                <h4 class="mb-0">Lorem ipsum?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
             </div>
@@ -29,22 +30,19 @@
             >
               <div class="card-body py-0">
                 <ul class="list-unstyled">
-                  <li>
-                    <a href="#" class="py-2 d-block text-muted">Lorem ipsum</a>
+                  <li
+                    class="py-2 d-block text-muted"
+                  >
+                    <RouterLink to="/products">全部</RouterLink>
                   </li>
-                  <li>
-                    <a href="#" class="py-2 d-block text-muted">Lorem ipsum</a>
-                  </li>
-                  <li>
-                    <a href="#" class="py-2 d-block text-muted">Lorem ipsum</a>
-                  </li>
-                  <li>
-                    <a href="#" class="py-2 d-block text-muted">Lorem ipsum</a>
-                  </li>
-                  <li>
-                    <a href="#" class="py-2 d-block text-muted">Lorem ipsum</a>
-                  </li>
-                  <li>
+                  <li
+                    v-for="item in categories"
+                    :key="item"
+                    class="py-2 d-block text-muted"
+                  >
+                    <RouterLink :to="`/products?category=${item}`">{{
+                      item
+                    }}</RouterLink>
                   </li>
                 </ul>
               </div>
@@ -59,8 +57,7 @@
               data-bs-target="#collapseTwo"
             >
               <div
-                class="d-flex justify-content-between
-                 align-items-center pe-1"
+                class="d-flex justify-content-between align-items-center pe-1"
               >
                 <h4 class="mb-0">Lorem ipsum</h4>
                 <i class="fas fa-chevron-down"></i>
@@ -75,7 +72,7 @@
               <div class="card-body py-0">
                 <ul class="list-unstyled">
                   <li>
-                    <a href="#" class="py-2 d-block text-muted">Lorem ipsum</a>
+                    <a href="#" class="py-2 d-block text-muted">Lorem ipsum?</a>
                   </li>
                   <li>
                     <a href="#" class="py-2 d-block text-muted">Lorem ipsum</a>
@@ -143,7 +140,8 @@
             <div class="card border-0 mb-4 position-relative position-relative">
               <img
                 :src="item.imagesUrl"
-                class="card-img-top rounded-0 object-fit-cover"
+                style="max-height: 350px; min-height: 300px"
+                class="card-img-top rounded-0 object-fit-fill"
                 alt="..."
               />
               <a href="#" class="text-dark">
@@ -154,11 +152,15 @@
               </a>
               <div class="card-body p-0">
                 <h4 class="mb-0 mt-3">
-                  <RouterLink :to="`/product/${item.id}`">{{ item.title }}</RouterLink>
+                  <RouterLink :to="`/product/${item.id}`">{{
+                    item.title
+                  }}</RouterLink>
                 </h4>
                 <p class="card-text mb-0">
-                  NT${{ item.price }} <span class="text-muted"><del>
-                    NT${{ item.origin_price }}</del></span>
+                  NT${{ item.price }}
+                  <span class="text-muted"
+                    ><del> NT${{ item.origin_price }}</del></span
+                  >
                 </p>
                 <p class="text-muted mt-3"></p>
               </div>
@@ -197,11 +199,22 @@ export default {
   data() {
     return {
       products: [],
+      categories: ['海景', '野外', '飯店', '民宿'],
     };
+  },
+  watch: {
+    '$route.query': {
+      handler() {
+        this.getProducts();
+      },
+    },
+    deep: true,
   },
   methods: {
     getProducts() {
-      const api = `${VITE_API_URL}api/${VITE_API_NAME}/products/all`;
+      const { category = '' } = this.$route.query;
+      console.log('category', category);
+      const api = `${VITE_API_URL}api/${VITE_API_NAME}/products?category=${category}`;
       axios.get(api).then((res) => {
         this.products = res.data.products;
         console.log(res);
