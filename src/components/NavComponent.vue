@@ -27,12 +27,17 @@
           <router-link to="/product" class="nav-item nav-link me-4 active"
             >Product</router-link
           >
-          <a v-if="this.carts" class="nav-item nav-link"
-            ><i class="bi bi-cart position-absolute"><span
-               class="position-absolute
-             top-0 start-100 translate-middle badge rounded-pill bg-danger">
-             {{ this.carts?.length }}
-             <span class="visually-hidden">unread messages</span></span></i></a>
+          <router-link to="/cart" v-if="this.carts" class="nav-item nav-link">
+            <i class="bi bi-cart position-absolute">
+              <span
+                class="position-absolute top-0 start-100
+                 translate-middle badge rounded-pill bg-danger"
+              >
+                {{ this.carts?.length }}
+                <span class="visually-hidden">unread messages</span></span
+              ></i
+            >
+          </router-link>
         </div>
       </div>
     </nav>
@@ -40,14 +45,9 @@
 </template>
 
 <script>
-
-// import axios from 'axios';
-
 import { mapActions, mapState } from 'pinia';
 
 import cartPinia from '@/stores/cartPinia';
-
-// const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 export default {
   computed: {
