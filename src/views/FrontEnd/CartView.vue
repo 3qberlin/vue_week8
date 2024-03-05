@@ -23,7 +23,7 @@
                   />
                   <p class="mb-0 fw-bold ms-3 d-inline-block">
                     {{ item.product.title }}
-                    <!-- {{ item.product.description }} -->
+
                   </p>
                 </th>
                 <td class="border-0 align-middle" style="max-width: 160px">
@@ -34,7 +34,7 @@
                         type="button"
                         id="button-addon1"
                       >
-                      <i class="bi bi-dash"></i>
+                      <i class="bi bi-dash" @click="reduceProduct(item)"></i>
                       </button>
                     </div>
                     <input
@@ -44,7 +44,7 @@
                       aria-label="Example text with button addon"
                       aria-describedby="button-addon1"
                       :value="item.qty"
-                      :id="item.product.id"
+                      :id="item.id"
                     />
                     <div class="input-group-append">
                       <button
@@ -52,7 +52,7 @@
                         type="button"
                         id="button-addon2"
                       >
-                      <i class="bi bi-plus-lg"></i>
+                      <i class="bi bi-plus-lg" @click="addProduct(item)"></i>
                       </button>
                     </div>
                   </div>
@@ -61,7 +61,8 @@
                   <p class="mb-0 ms-auto">{{ item.qty * item.product.price }}</p>
                 </td>
                 <td class="border-0 align-middle">
-                  <i class="bi bi-trash3 text-danger" style="cursor:pointer;"></i>
+                  <i class="bi bi-trash3 text-danger" style="cursor:pointer;"
+                   @blur="delCartItem(item.id)"></i>
                 </td>
               </tr>
             </tbody>
@@ -74,6 +75,7 @@
               placeholder="Coupon Code"
               aria-label="Recipient's username"
               aria-describedby="button-addon2"
+              v-model="couponContent"
             />
             <div class="input-group-append">
               <button
@@ -82,7 +84,7 @@
                 type="button"
                 id="button-addon2"
               >
-              <i class="bi bi-ticket-perforated"></i>
+              <i class="bi bi-ticket-perforated" @click="couponTicket"></i>
               </button>
             </div>
           </div>
@@ -130,15 +132,65 @@ import { mapActions, mapState } from 'pinia';
 
 import cartPinia from '@/stores/cartPinia';
 
+import axios from 'axios';
+
+const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
+
 export default {
   computed: {
     ...mapState(cartPinia, ['carts', 'final_total', 'total']),
   },
   methods: {
     ...mapActions(cartPinia, ['getCarts', 'pinia_carts', 'carts']),
+    addProduct(item) {
+      const cart = {
+        product_id: item.product_id,
+        qty: item.qty + 1,
+      };
+      console.log('cart', cart);
+      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
+      axios.put(api, { data: cart }).then((res) => {
+        console.log('res', res);
+        this.carts.qty = cart.qty;
+        console.log('this.carts.addProduct', this.carts.qty);
+        this.getCarts();
+      });
+    },
+    reduceProduct(item) {
+      const cart = {
+        product_id: item.product_id,
+        qty: item.qty - 1,
+      };
+      console.log('cart', cart);
+      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
+      axios.put(api, { data: cart }).then((res) => {
+        console.log('res', res);
+        this.carts.qty = cart.qty;
+        console.log('this.carts.reduceProduct', this.carts.qty);
+        this.getCarts();
+      });
+    },
+    delCartItem(item) {
+      console.log('item', item);
+      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item}`;
+      axios.delete(api).then((res) => {
+        console.log('ok', res);
+        this.getCarts();
+      }).catch((err) => {
+        alert(err.response.data.message);
+      });
+    },
+    couponTicket() {
+      alert(this.couponContent);
+    },
   },
   mounted() {
     this.getCarts();
+  },
+  data() {
+    return {
+      couponContent: '',
+    };
   },
 };
 </script>
