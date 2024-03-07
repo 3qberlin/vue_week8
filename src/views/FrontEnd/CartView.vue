@@ -62,7 +62,7 @@
                 </td>
                 <td class="border-0 align-middle">
                   <i class="bi bi-trash3 text-danger" style="cursor:pointer;"
-                   @blur="delCartItem(item.id)"></i>
+                   @click="delCartItem(item.id)"></i>
                 </td>
               </tr>
             </tbody>
@@ -114,7 +114,7 @@
             </table>
             <div class="d-flex justify-content-between mt-4">
               <p class="mb-0 h4 fw-bold">總計</p>
-              <p class="mb-0 h4 fw-bold">NT${{ total }}</p>
+              <p class="mb-0 h4 fw-bold">NT${{ this.final_total }}</p>
             </div>
             <a href="./checkout.html" class="btn btn-dark w-100 mt-4"
               >送出訂單</a
@@ -149,8 +149,7 @@ export default {
       };
       console.log('cart', cart);
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
-      axios.put(api, { data: cart }).then((res) => {
-        console.log('res', res);
+      axios.put(api, { data: cart }).then(() => {
         this.carts.qty = cart.qty;
         console.log('this.carts.addProduct', this.carts.qty);
         this.getCarts();
@@ -163,25 +162,30 @@ export default {
       };
       console.log('cart', cart);
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
-      axios.put(api, { data: cart }).then((res) => {
-        console.log('res', res);
+      axios.put(api, { data: cart }).then(() => {
         this.carts.qty = cart.qty;
         console.log('this.carts.reduceProduct', this.carts.qty);
         this.getCarts();
       });
     },
     delCartItem(item) {
-      console.log('item', item);
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item}`;
-      axios.delete(api).then((res) => {
-        console.log('ok', res);
+      axios.delete(api).then(() => {
         this.getCarts();
       }).catch((err) => {
         alert(err.response.data.message);
       });
     },
     couponTicket() {
-      alert(this.couponContent);
+      // alert(this.couponContent);
+      const textContent = {
+        code: this.couponContent,
+      };
+      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/coupon`;
+      axios.post(api, { data: textContent }).then((res) => {
+        this.final_total = res.data.data.final_total;
+        this.getCarts();
+      });
     },
   },
   mounted() {
