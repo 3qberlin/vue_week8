@@ -1,5 +1,7 @@
 <template>
-  <h2>About</h2>
+  <div class="container">
+    <h2>關於我們</h2>
+  </div>
 </template>
 
 <script>

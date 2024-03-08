@@ -116,9 +116,8 @@
               <p class="mb-0 h4 fw-bold">總計</p>
               <p class="mb-0 h4 fw-bold">NT${{ this.final_total }}</p>
             </div>
-            <a href="./checkout.html" class="btn btn-dark w-100 mt-4"
-              >送出訂單</a
-            >
+            <RouterLink to="/checkout" class="btn btn-dark w-100 mt-4"
+              >送出訂單</RouterLink>
           </div>
         </div>
       </div>
@@ -177,7 +176,6 @@ export default {
       });
     },
     couponTicket() {
-      // alert(this.couponContent);
       const textContent = {
         code: this.couponContent,
       };

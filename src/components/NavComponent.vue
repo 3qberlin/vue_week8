@@ -1,7 +1,7 @@
 <template>
   <div class="container d-flex flex-column">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <router-link to="/home" class="navbar-brand">Home</router-link>
+      <router-link to="/home" class="navbar-brand">首頁</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,13 +19,10 @@
       >
         <div class="navbar-nav">
           <router-link to="/about" class="nav-item nav-link me-4 active"
-            >About</router-link
+            >關於我們</router-link
           >
           <router-link to="/products" class="nav-item nav-link me-4 active"
-            >Products</router-link
-          >
-          <router-link to="/product" class="nav-item nav-link me-4 active"
-            >Product</router-link
+            >產品一覽</router-link
           >
           <router-link to="/cart" v-if="this.carts" class="nav-item nav-link">
             <i class="bi bi-cart position-absolute">
