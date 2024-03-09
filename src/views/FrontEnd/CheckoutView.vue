@@ -184,9 +184,8 @@ export default {
     buildOrder() {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/order`;
       const order = this.form;
-      axios.post(api, { data: order }).then((res) => {
-        alert(res.data.message);
-        this.form.resetForm();
+      axios.post(api, { data: order }).then(() => {
+        this.$router.push({ name: 'checkoutSuccess' });
         this.getCarts();
       }).catch((err) => {
         alert(err.response.data.message);

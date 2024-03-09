@@ -7,7 +7,7 @@
         <div
           class="d-flex align-items-center justify-content-between text-white mb-md-7 mb-4"
         >
-          <a class="text-white h4" href="./index.html">LOGO</a>
+          <img src="https://hackmd.io/_uploads/S1atYtYap.png" alt="logo" style="width:140px; object-fit:cover;">
           <ul class="d-flex list-unstyled mb-0 h4">
             <li>
               <a href="#" class="text-white mx-3"
@@ -33,9 +33,9 @@
         >
           <div class="mb-md-0 mb-1">
             <p class="mb-0">02-3456-7890</p>
-            <p class="mb-0">service@mail.com</p>
+            <p class="mb-0">serviceTravel@gmail.com</p>
           </div>
-          <p class="mb-0">© 2020 LOGO All Rights Reserved.</p>
+          <p class="mb-0">© 2024 LOGO All Rights Reserved.</p>
         </div>
       </div>
     </div>
