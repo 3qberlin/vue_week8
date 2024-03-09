@@ -127,7 +127,6 @@
 </template>
 
 <script>
-
 import { mapActions, mapState } from 'pinia';
 
 import cartPinia from '@/stores/cartPinia';
