@@ -159,8 +159,6 @@ const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 const token = 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkFrZEJodyJ9.eyJpc3MiOiJodHRwczovL3Nlc3Npb24uZmlyZWJhc2UuZ29vZ2xlLmNvbS92dWUtY291cnNlLWFwaSIsImF1ZCI6InZ1ZS1jb3Vyc2UtYXBpIiwiYXV0aF90aW1lIjoxNzA5OTY5OTc1LCJ1c2VyX2lkIjoiVklrYjA4ZHhBT2F4TzRBNE1kZlphYWZ6Q1AyMyIsInN1YiI6IlZJa2IwOGR4QU9heE80QTRNZGZaYWFmekNQMjMiLCJpYXQiOjE3MDk5Njk5NzUsImV4cCI6MTcxMDQwMTk3NSwiZW1haWwiOiIzcS5iZXJsaW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIjNxLmJlcmxpbkBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.OsCNmHr-44a97_GiU-lGqPZh_t__I34fSYoMZt-8q9UxXzizIRsbQdtE2Hjz8j0Q9v5_zLIM0uz0m1DyiwxEF0VnNfYThd_AAnHm2xFgUg1fcznIrfuHfXpIDpXdD9kn8_FNTz5393ZRBFqZzZ1ANo_61e4r6dtji5BjEOfO0fPcWKThOtKqZ55GBy3yEhf2bpq9nuo-aZWpU_FQKvKMSG8315wVI7_-0_rogd_viibO35unqI0mjGNE9qPg2fNlOuo9fqAhKLbJrkiMHnG_oHo_ELqXPcqmXg6w7Kju76SL039xK-mG9uxNjdwLqGUt_QGIc8uQ1PmV--ING3XgFA';
 
-console.log('token', token);
-
 export default {
   data() {
     return {
@@ -180,11 +178,9 @@ export default {
   methods: {
     getProducts() {
       const { category = '' } = this.$route.query;
-      console.log('category', category);
       const api = `${VITE_API_URL}api/${VITE_API_NAME}/products?category=${category}`;
       axios.get(api).then((res) => {
         this.products = res.data.products;
-        console.log(res);
       });
     },
     pagination(page = 1) {
@@ -192,10 +188,8 @@ export default {
       axios.get(api)
         .then((res) => {
           const { products, pagination } = res.data;
-          console.log('res.data', res.data);
           this.products = products;
           this.vuePagination = pagination;
-          console.log('this.vuePagination', this.vuePagination);
         }).catch((err) => {
           alert(err.response.data.message);
         });

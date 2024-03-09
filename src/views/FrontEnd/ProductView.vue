@@ -152,9 +152,7 @@ export default {
       axios
         .get(`${VITE_API_URL}/api/${VITE_API_NAME}/product/${id}`)
         .then((res) => {
-          console.log(res);
           this.product = res.data.product;
-          console.log(this.product);
         });
     },
     ...mapActions(cartPinia, ['addToCart']),

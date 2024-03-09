@@ -13,9 +13,7 @@ export default defineStore('cartPinia', {
   actions: {
     getCarts() {
       axios.get(`${VITE_API_URL}/api/${VITE_API_NAME}/cart`).then((res) => {
-        console.log('piniaRes', res);
         this.carts = res.data.data.carts;
-        console.log('piniaCarts', this.carts);
         this.final_total = res.data.data.final_total;
         this.total = res.data.data.total;
       });
@@ -26,8 +24,7 @@ export default defineStore('cartPinia', {
         qty: 1,
       };
       axios.post(`${VITE_API_URL}api/${VITE_API_NAME}/cart`, { data: order })
-        .then((res) => {
-          console.log(res);
+        .then(() => {
           this.getCarts();
         });
     },

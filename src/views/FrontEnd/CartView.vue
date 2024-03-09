@@ -145,11 +145,9 @@ export default {
         product_id: item.product_id,
         qty: item.qty + 1,
       };
-      console.log('cart', cart);
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
       axios.put(api, { data: cart }).then(() => {
         this.carts.qty = cart.qty;
-        console.log('this.carts.addProduct', this.carts.qty);
         this.getCarts();
       });
     },
@@ -158,11 +156,9 @@ export default {
         product_id: item.product_id,
         qty: item.qty - 1,
       };
-      console.log('cart', cart);
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
       axios.put(api, { data: cart }).then(() => {
         this.carts.qty = cart.qty;
-        console.log('this.carts.reduceProduct', this.carts.qty);
         this.getCarts();
       });
     },
@@ -181,7 +177,6 @@ export default {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/coupon`;
       axios.post(api, { data: textContent }).then((res) => {
         this.final_total = res.data.data.final_total;
-        console.log('couponRes', res);
         this.noneCoupon = '已套用優惠券';
         this.getCarts();
       }).catch((err) => {

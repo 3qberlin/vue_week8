@@ -146,7 +146,6 @@ export default {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
       axios.put(api, { data: cart }).then(() => {
         this.carts.qty = cart.qty;
-        console.log('this.carts.addProduct', this.carts.qty);
         this.getCarts();
       });
     },
@@ -159,7 +158,6 @@ export default {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
       axios.put(api, { data: cart }).then(() => {
         this.carts.qty = cart.qty;
-        console.log('this.carts.reduceProduct', this.carts.qty);
         this.getCarts();
       });
     },
