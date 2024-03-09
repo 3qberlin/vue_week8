@@ -3,7 +3,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    this.$router.push({ name: 'home' });
+  },
+};
 </script>
 
 <style lang="scss">

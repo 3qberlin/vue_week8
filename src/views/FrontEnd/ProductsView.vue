@@ -151,9 +151,6 @@
       </div>
     </div>
   </div>
-  <div @click="pagination()">
-    pagination
-  </div>
 </template>
 <script>
 import axios from 'axios';
@@ -201,7 +198,6 @@ export default {
           console.log('this.vuePagination', this.vuePagination);
         }).catch((err) => {
           alert(err.response.data.message);
-          // window.location = 'login.html';
         });
     },
     createToken() {
@@ -211,6 +207,7 @@ export default {
   mounted() {
     this.getProducts();
     this.createToken();
+    this.pagination();
   },
 };
 </script>
