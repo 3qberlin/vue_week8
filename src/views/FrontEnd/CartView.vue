@@ -86,6 +86,7 @@
               >
               <i class="bi bi-ticket-perforated" @click="couponTicket"></i>
               </button>
+              <span v-if="this.noneCoupon">{{ this.noneCoupon }}</span>
             </div>
           </div>
         </div>
@@ -182,7 +183,11 @@ export default {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/coupon`;
       axios.post(api, { data: textContent }).then((res) => {
         this.final_total = res.data.data.final_total;
+        console.log('couponRes', res);
+        this.noneCoupon = '已套用優惠券';
         this.getCarts();
+      }).catch((err) => {
+        this.noneCoupon = err.response.data.message;
       });
     },
   },
@@ -192,6 +197,7 @@ export default {
   data() {
     return {
       couponContent: '',
+      noneCoupon: '',
     };
   },
 };
