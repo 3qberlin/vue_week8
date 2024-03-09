@@ -23,7 +23,6 @@
                   />
                   <p class="mb-0 fw-bold ms-3 d-inline-block">
                     {{ item.product.title }}
-
                   </p>
                 </th>
                 <td class="border-0 align-middle" style="max-width: 160px">
