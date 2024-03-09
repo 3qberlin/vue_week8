@@ -48,11 +48,11 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-white px-0 mb-0 py-3">
             <li class="breadcrumb-item">
-              <RouterLink to="/" class="text-secondary">Home</RouterLink>
+              <RouterLink to="/home" class="text-secondary">Home</RouterLink>
             </li>
             <li class="breadcrumb-item">
-              <RouterLink to="/product" class="text-secondary"
-                >Product</RouterLink
+              <RouterLink to="/products" class="text-secondary"
+                >Products</RouterLink
               >
             </li>
             <li class="breadcrumb-item active" aria-current="page">Detail</li>
