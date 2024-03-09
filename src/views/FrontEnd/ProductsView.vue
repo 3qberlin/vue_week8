@@ -86,7 +86,7 @@
             </div>
           </div>
         </div>
-        <nav class="d-flex justify-content-center">
+        <!-- <nav class="d-flex justify-content-center">
           <ul class="pagination">
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Previous">
@@ -102,11 +102,57 @@
               <a class="page-link" href="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
               </a>
+              {{ vuePagination.has_next }}
             </li>
           </ul>
-        </nav>
+        </nav> -->
+        <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li
+      class="page-item"
+      :class="{'disabled': vuePagination.current_page === 1}"
+    >
+      <a
+        class="page-link"
+        href="#"
+        aria-label="Previous"
+        @click.prevent="pagination(vuePagination.current_page - 1)"
+      >
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li
+      v-for="(item, index) in vuePagination.total_pages"
+      :key="index"
+      class="page-item"
+      :class="{'active': item === vuePagination.current_page}"
+    >
+      <a
+        class="page-link"
+        href="#"
+        @click.prevent="pagination(item)"
+      >{{ item }}</a>
+    </li>
+    <li
+      class="page-item"
+      :class="{'disabled': vuePagination.current_page === vuePagination.total_pages}"
+    >
+      <a
+        class="page-link"
+        href="#"
+        aria-label="Previous"
+        @click.prevent="pagination(vuePagination.current_page + 1)"
+      >
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
       </div>
     </div>
+  </div>
+  <div @click="pagination()">
+    pagination
   </div>
 </template>
 <script>
@@ -114,11 +160,16 @@ import axios from 'axios';
 
 const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
+const token = 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkFrZEJodyJ9.eyJpc3MiOiJodHRwczovL3Nlc3Npb24uZmlyZWJhc2UuZ29vZ2xlLmNvbS92dWUtY291cnNlLWFwaSIsImF1ZCI6InZ1ZS1jb3Vyc2UtYXBpIiwiYXV0aF90aW1lIjoxNzA5OTY5OTc1LCJ1c2VyX2lkIjoiVklrYjA4ZHhBT2F4TzRBNE1kZlphYWZ6Q1AyMyIsInN1YiI6IlZJa2IwOGR4QU9heE80QTRNZGZaYWFmekNQMjMiLCJpYXQiOjE3MDk5Njk5NzUsImV4cCI6MTcxMDQwMTk3NSwiZW1haWwiOiIzcS5iZXJsaW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIjNxLmJlcmxpbkBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.OsCNmHr-44a97_GiU-lGqPZh_t__I34fSYoMZt-8q9UxXzizIRsbQdtE2Hjz8j0Q9v5_zLIM0uz0m1DyiwxEF0VnNfYThd_AAnHm2xFgUg1fcznIrfuHfXpIDpXdD9kn8_FNTz5393ZRBFqZzZ1ANo_61e4r6dtji5BjEOfO0fPcWKThOtKqZ55GBy3yEhf2bpq9nuo-aZWpU_FQKvKMSG8315wVI7_-0_rogd_viibO35unqI0mjGNE9qPg2fNlOuo9fqAhKLbJrkiMHnG_oHo_ELqXPcqmXg6w7Kju76SL039xK-mG9uxNjdwLqGUt_QGIc8uQ1PmV--ING3XgFA';
+
+console.log('token', token);
+
 export default {
   data() {
     return {
       products: [],
       categories: ['海景', '野外', '飯店', '民宿'],
+      vuePagination: {},
     };
   },
   watch: {
@@ -139,9 +190,27 @@ export default {
         console.log(res);
       });
     },
+    pagination(page = 1) {
+      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/products?page=${page}`;
+      axios.get(api)
+        .then((res) => {
+          const { products, pagination } = res.data;
+          console.log('res.data', res.data);
+          this.products = products;
+          this.vuePagination = pagination;
+          console.log('this.vuePagination', this.vuePagination);
+        }).catch((err) => {
+          alert(err.response.data.message);
+          // window.location = 'login.html';
+        });
+    },
+    createToken() {
+      axios.defaults.headers.common.Authorization = token;
+    },
   },
   mounted() {
     this.getProducts();
+    this.createToken();
   },
 };
 </script>
