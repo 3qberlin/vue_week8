@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="about-us">
-      <div class="container mt-7 mb-5">
+      <div class="container mt-7" style="margin-bottom:120px;">
         <div class="row">
           <div class="col-md-6">
             <div class="about-img">
@@ -10,7 +10,7 @@
           </div>
           <div class="col-md-6">
             <div class="about-content">
-              <div class="about-sub-heading">
+              <div class="about-sub-heading mt-3 mt-md-0">
                 <h5>aGoFa 票選 全球最佳最訂房網站</h5>
               </div>
               <h2>
