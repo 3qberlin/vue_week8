@@ -158,16 +158,6 @@ export default {
         });
     },
     ...mapActions(cartPinia, ['addToCart']),
-    // addToCart(id) {
-    //   const order = {
-    //     product_id: id,
-    //     qty: 1,
-    //   };
-    //   axios.post(`${VITE_API_URL}api/${VITE_API_NAME}/cart`, { data: order })
-    //     .then((res) => {
-    //       console.log(res);
-    //     });
-    // },
   },
   mounted() {
     this.getProduct();

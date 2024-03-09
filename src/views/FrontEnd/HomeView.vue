@@ -2,54 +2,55 @@
   <div class="container">
     <div class="row mt-5">
       <div class="col-md-4 mt-md-4">
-        <div class="card border-0 mb-4">
+        <div class="card border-0 mb-4 h-100">
           <img
-            src="https://images.unsplash.com/photo-1502743780242-f10d2ce370f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1916&q=80"
-            class="card-img-top rounded-0"
+            src="https://images.unsplash.com/photo-1628745750116-d4e990e4481a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="card-img-top rounded-0 object-fit-cover"
             alt="..."
           />
           <div class="card-body text-center">
-            <h4>Lorem ipsum</h4>
+            <h4>卡拖卡尼．親子樂園</h4>
             <div class="d-flex justify-content-between">
               <p class="card-text text-muted mb-0">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod.
+                卡拖卡尼．親子樂園是一處迷人的住宿選擇，為家庭提供了理想的度假體驗。這個樂園擁有豐富多樣的娛樂設施和活動
+                ，適合大人和小孩。來此度假，您將享受到舒適的住宿和愉快的休閒時光，是放鬆身心的理想之地。
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-4 mt-md-4">
-        <div class="card border-0 mb-4">
+        <div class="card border-0 mb-4 h-100">
           <img
-            src="https://images.unsplash.com/photo-1502743780242-f10d2ce370f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1916&q=80"
-            class="card-img-top rounded-0"
+            src="https://plus.unsplash.com/premium_photo-1670360414903-19e5832f8bc4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="card-img-top rounded-0 object-fit-cover"
             alt="..."
           />
           <div class="card-body text-center">
-            <h4>Lorem ipsum</h4>
+            <h4>伊斯坦堡．歷史風情</h4>
             <div class="d-flex justify-content-between">
               <p class="card-text text-muted mb-0">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod.
+                伊斯坦堡民宿魅力無窮：歷史悠久，風格多樣，地理位置優越。每處皆彷彿是故事場景，
+                親切熱情的服務，讓人感受到家的溫暖。
+                交通便捷，鄰近景點，帶給旅人無盡便利。
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-4 mt-md-4">
-        <div class="card border-0 mb-4">
+        <div class="card border-0 mb-4 h-100">
           <img
-            src="https://images.unsplash.com/photo-1502743780242-f10d2ce370f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1916&q=80"
-            class="card-img-top rounded-0"
+            src="https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="card-img-top rounded-0 object-fit-cover"
             alt="..."
           />
           <div class="card-body text-center">
-            <h4>Lorem ipsum</h4>
+            <h4>艾美度假酒店．大縱酒</h4>
             <div class="d-flex justify-content-between">
               <p class="card-text text-muted mb-0">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod.
+                艾美度假酒店：奢華設施、無敵海景、尊貴服務。
+                享受私密沙灘、水上活動、精緻美食，享受完美假期。
               </p>
             </div>
           </div>
@@ -64,65 +65,17 @@
         class="carousel slide"
         data-ride="carousel"
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div>
             <div class="row justify-content-center py-7">
               <div class="col-md-6 text-center">
-                <h3>Lorem ipsum.</h3>
+                <h3>為你備好，最好的旅宿去處</h3>
                 <p class="my-5">
-                  “Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat.”
+                  找尋最佳旅宿？我們提供最優房價、豐富旅遊選擇，滿足您需求。探索舒適客房、優質服務，打造完美旅程體驗。
                 </p>
-                <p><small>—Lorem ipsum dolor sit amet.—</small></p>
+                <p><small>—Home Travel—</small></p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="row justify-content-center py-7">
-              <div class="col-md-6 text-center">
-                <h3>Lorem ipsum.</h3>
-                <p class="my-5">
-                  “Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat.”
-                </p>
-                <p><small>—Lorem ipsum dolor sit amet.—</small></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row justify-content-center py-7">
-              <div class="col-md-6 text-center">
-                <h3>Lorem ipsum.</h3>
-                <p class="my-5">
-                  “Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat.”
-                </p>
-                <p><small>—Lorem ipsum dolor sit amet.—</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
     </div>
   </div>
@@ -130,52 +83,37 @@
     <div class="row">
       <div class="col-md-6">
         <img
-          src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
           class="img-fluid"
         />
       </div>
       <div class="col-md-4 m-auto text-center">
-        <h4 class="mt-4">Lorem ipsum</h4>
+        <h4 class="mt-4">當季優惠</h4>
         <p class="text-muted">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna.
+          「悠遊當季優惠」為您帶來無限精彩！探索令人嘆為觀止的景點，享受獨特的文化體驗，
+          並在我們精心挑選的旅館中度過舒適的夜晚。無論您是想探索自然風光、品嚐美食、
+          或是體驗冒險刺激，我們都有專屬於您的優惠計劃。立即預訂，抓住當季最佳優惠，開啟一段難忘的旅程！
         </p>
       </div>
     </div>
     <div class="row flex-row-reverse justify-content-between mt-4">
       <div class="col-md-6">
         <img
-          src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          src="https://images.unsplash.com/photo-1625834318071-f28f0e51449b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
           class="img-fluid"
         />
       </div>
       <div class="col-md-4 m-auto text-center">
-        <h4 class="mt-4">Lorem ipsum</h4>
+        <h4 class="mt-4">網友推薦</h4>
         <p class="text-muted">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna.
+          「網友推薦，旅遊高滿意度！」我們的目的地來自網友的熱情推薦，擁有極高的滿意度。
+          從驚艷的景點到溫馨的住宿，我們致力於為您打造一場難忘的旅程。透過網友的真實評論，
+          您可以放心地探索新的目的地，體驗當地的文化和風情。無論您是追求奢華還是探索冒險，
+          我們都有專業的團隊為您量身打造，確保您的旅行充滿歡笑和美好回憶。
+          讓我們一同啟程，開啟一段充滿驚喜的旅程！
         </p>
-      </div>
-    </div>
-  </div>
-  <div class="bg-light py-4">
-    <div class="container">
-      <div
-        class="d-flex flex-column flex-md-row
-         justify-content-between align-items-md-center
-          align-items-start"
-      >
-        <p class="mb-0 fw-bold">Lorem ipsum dolor sit amet.</p>
-        <div class="input-group w-md-50 mt-md-0 mt-3">
-          <input type="text" class="form-control rounded-0" placeholder="" />
-          <div class="input-group-append">
-            <button class="btn btn-dark rounded-0" type="button" id="search">
-              Lorem ipsum
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
