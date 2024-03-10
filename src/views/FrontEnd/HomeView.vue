@@ -65,17 +65,17 @@
         class="carousel slide"
         data-ride="carousel"
       >
-          <div>
-            <div class="row justify-content-center py-7">
-              <div class="col-md-6 text-center">
-                <h3>為你備好，最好的旅宿去處</h3>
-                <p class="my-5">
-                  找尋最佳旅宿？我們提供最優房價、豐富旅遊選擇，滿足您需求。探索舒適客房、優質服務，打造完美旅程體驗。
-                </p>
-                <p><small>—Home Travel—</small></p>
-              </div>
+        <div>
+          <div class="row justify-content-center py-7">
+            <div class="col-md-6 text-center">
+              <h3>為你備好，最好的旅宿去處</h3>
+              <p class="my-5">
+                找尋最佳旅宿？我們提供最優房價、豐富旅遊選擇，滿足您需求。探索舒適客房、優質服務，打造完美旅程體驗。
+              </p>
+              <p><small>—Home Travel—</small></p>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
@@ -115,6 +115,28 @@
           讓我們一同啟程，開啟一段充滿驚喜的旅程！
         </p>
       </div>
+    </div>
+  </div>
+  <h3 class="text-center">聯名推薦</h3>
+  <div class="container-fluid bg-light">
+    <div class="container">
+      <ul class="row d-flex g-3 row-cols-1 row-cols-md-3 list-unstyled mt-4">
+        <li class="card-body rounded-2 text-center" >
+          <img src="https://hackmd.io/_uploads/r1X10X56p.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        </li>
+        <li class="card-body rounded-2 text-center" >
+          <img src="https://hackmd.io/_uploads/HJH1CmcTT.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        </li>
+        <li class="card-body rounded-2 text-center" >
+          <img src="https://hackmd.io/_uploads/Sy8JCXq6a.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        </li>
+        <li class="card-body rounded-2 text-center" >
+          <img src="https://hackmd.io/_uploads/SklD10m9TT.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        </li>
+        <li class="card-body rounded-2 text-center" >
+          <img src="https://hackmd.io/_uploads/rkWgA7966.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        </li>
+      </ul>
     </div>
   </div>
 </template>
