@@ -25,6 +25,7 @@ export default defineStore('cartPinia', {
       };
       axios.post(`${VITE_API_URL}api/${VITE_API_NAME}/cart`, { data: order })
         .then(() => {
+          alert('產品已加入購物車');
           this.getCarts();
         });
     },

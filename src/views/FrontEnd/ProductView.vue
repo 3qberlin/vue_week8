@@ -72,16 +72,18 @@
                   type="button"
                   id="button-addon1"
                 >
-                  <i class="bi bi-dash"></i>
+                  <!-- <i class="bi bi-dash"></i> -->
                 </button>
               </div>
               <input
                 type="text"
-                class="form-control border-0 text-center my-auto shadow-none bg-light"
+                class="form-control border-0 text-center my-auto
+                 shadow-none bg-light position-relative"
                 placeholder=""
                 aria-label="Example text with button addon"
                 aria-describedby="button-addon1"
                 value="1"
+                disabled
               />
               <div class="input-group-append">
                 <button
@@ -89,9 +91,12 @@
                   type="button"
                   id="button-addon2"
                 >
-                  <i class="bi bi-plus-lg"></i>
+                  <!-- <i class="bi bi-plus-lg"></i> -->
                 </button>
               </div>
+              <span class="position-absolute ms-3 mt-5 text-center text-dark mt-2">
+                預設房數<span class="text-primary mx-1">1</span>筆，數量調整請至購物車
+              </span>
             </div>
           </div>
           <div class="col-6">
