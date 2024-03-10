@@ -181,10 +181,12 @@ export default {
       const api = `${VITE_API_URL}api/${VITE_API_NAME}/products?category=${category}`;
       axios.get(api).then((res) => {
         this.products = res.data.products;
+        this.pagination();
       });
     },
     pagination(page = 1) {
-      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/products?page=${page}`;
+      const { category = '' } = this.$route.query;
+      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/products?page=${page}&category=${category}`;
       axios.get(api)
         .then((res) => {
           const { products, pagination } = res.data;
