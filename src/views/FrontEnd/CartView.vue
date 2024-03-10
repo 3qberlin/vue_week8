@@ -152,15 +152,21 @@ export default {
       });
     },
     reduceProduct(item) {
-      const cart = {
-        product_id: item.product_id,
-        qty: item.qty - 1,
-      };
-      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
-      axios.put(api, { data: cart }).then(() => {
-        this.carts.qty = cart.qty;
-        this.getCarts();
-      });
+      const condition = item.qty;
+      console.log('condition', condition);
+      if (condition === 1) {
+        alert('訂房數量最低為1間，欲刪除整筆請點擊紅色按鈕');
+      } else {
+        const cart = {
+          product_id: item.product_id,
+          qty: item.qty - 1,
+        };
+        const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
+        axios.put(api, { data: cart }).then(() => {
+          this.carts.qty = cart.qty;
+          this.getCarts();
+        });
+      }
     },
     delCartItem(item) {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item}`;
