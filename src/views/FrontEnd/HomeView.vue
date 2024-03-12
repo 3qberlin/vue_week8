@@ -1,13 +1,91 @@
 <template>
+  <div class="container-fluid p-0">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block pb-5">
+            <h2>渡假聖地</h2>
+            <p class="h4">放鬆身心的好地方</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1506059612708-99d6c258160e?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block pb-5">
+            <h2>票選秘境</h2>
+            <p class="h4">一生一定要拜訪一次的美景</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1532926381893-7542290edf1d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block pb-5">
+            <h2>走入自然</h2>
+            <p class="h4">融入自然的懷抱</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
   <div class="container">
     <div class="row mt-5">
-      <div class="col-md-4 mt-md-4">
-        <div class="card border-0 mb-4 h-100">
+      <div class="col-12">
+        <h2 class="bg-info d-inline-block rounded-2 px-3 text-white shadow
+         position-relative">早鳥優惠
+        <span class="position-absolute top-100 start-100 bg-warning
+         rounded-5 translate-middle" style="padding:12px;"></span>
+         <span class="position-absolute top-100 start-25 bg-success opacity-50
+         rounded-5 translate-middle" style="padding:8px;"></span>
+        </h2>
+      </div>
+      <div class="col-md-4 mt-4">
+        <div class="card border-0 mb-4 h-100 position-relative">
           <img
             src="https://images.unsplash.com/photo-1628745750116-d4e990e4481a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover"
             alt="..."
           />
+          <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
+           style="width:160px;left:8px;padding:0px 8px;">$ 8015 元起 / 一晚</span>
           <div class="card-body text-center">
             <h4>卡拖卡尼．親子樂園</h4>
             <div class="d-flex justify-content-between">
@@ -20,12 +98,14 @@
         </div>
       </div>
       <div class="col-md-4 mt-md-4">
-        <div class="card border-0 mb-4 h-100">
+        <div class="card border-0 mb-4 h-100 position-relative">
           <img
             src="https://plus.unsplash.com/premium_photo-1670360414903-19e5832f8bc4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover"
             alt="..."
           />
+          <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
+           style="width:160px;left:8px;padding:0px 8px;">$ 2899 元起 / 一晚</span>
           <div class="card-body text-center">
             <h4>伊斯坦堡．歷史風情</h4>
             <div class="d-flex justify-content-between">
@@ -39,12 +119,14 @@
         </div>
       </div>
       <div class="col-md-4 mt-md-4">
-        <div class="card border-0 mb-4 h-100">
+        <div class="card border-0 mb-4 h-100 position-relative">
           <img
             src="https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover"
             alt="..."
           />
+          <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
+           style="width:160px;left:8px;padding:0px 8px;">$ 8899 元起 / 一晚</span>
           <div class="card-body text-center">
             <h4>艾美度假酒店．大縱酒</h4>
             <div class="d-flex justify-content-between">
@@ -55,6 +137,13 @@
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <p class="fs-5 d-flex flex-nowrap justify-content-end">
+          <router-link to="/products" class="text-muted text-decoration-none
+           border-bottom border-warning border-2"
+            >看更多<i class="bi bi-arrow-right-circle ms-1"></i></router-link>
+          </p>
       </div>
     </div>
   </div>
@@ -121,20 +210,45 @@
   <div class="container-fluid bg-light">
     <div class="container">
       <ul class="row d-flex g-3 row-cols-1 row-cols-md-3 list-unstyled mt-4">
-        <li class="card-body rounded-2 text-center" >
-          <img src="https://hackmd.io/_uploads/r1X10X56p.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        <li class="card-body rounded-2 text-center">
+          <img
+            src="https://hackmd.io/_uploads/r1X10X56p.png"
+            alt="cor"
+            class="object-fit-cover"
+            style="width: 200px"
+          />
         </li>
-        <li class="card-body rounded-2 text-center" >
-          <img src="https://hackmd.io/_uploads/HJH1CmcTT.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        <li class="card-body rounded-2 text-center">
+          <img
+            src="https://hackmd.io/_uploads/HJH1CmcTT.png"
+            alt="cor"
+            class="object-fit-cover"
+            style="width: 200px"
+          />
         </li>
-        <li class="card-body rounded-2 text-center" >
-          <img src="https://hackmd.io/_uploads/Sy8JCXq6a.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        <li class="card-body rounded-2 text-center">
+          <img
+            src="https://hackmd.io/_uploads/Sy8JCXq6a.png"
+            alt="cor"
+            class="object-fit-cover"
+            style="width: 200px"
+          />
         </li>
-        <li class="card-body rounded-2 text-center" >
-          <img src="https://hackmd.io/_uploads/SklD10m9TT.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        <li class="card-body rounded-2 text-center">
+          <img
+            src="https://hackmd.io/_uploads/SklD10m9TT.png"
+            alt="cor"
+            class="object-fit-cover"
+            style="width: 200px"
+          />
         </li>
-        <li class="card-body rounded-2 text-center" >
-          <img src="https://hackmd.io/_uploads/rkWgA7966.png" alt="cor" class="object-fit-cover" style="width:200px;">
+        <li class="card-body rounded-2 text-center">
+          <img
+            src="https://hackmd.io/_uploads/rkWgA7966.png"
+            alt="cor"
+            class="object-fit-cover"
+            style="width: 200px"
+          />
         </li>
       </ul>
     </div>
