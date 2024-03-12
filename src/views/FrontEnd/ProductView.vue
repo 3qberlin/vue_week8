@@ -128,7 +128,26 @@
                 介紹 <span class="text-muted"></span>
               </p>
               <p>{{ product.content }}</p>
-              <p class="text-muted mt-3"></p>
+              <p class="text-muted mt-3 fs-5">房間設施</p>
+              <ul class="list-unstyled d-flex">
+                <li class="col-auto border rounded-1 px-2 d-flex bg-info flex-column flex-wrap
+                 justify-content-center align-items-center">
+                  <i class="bi bi-droplet-fill bg-info"></i><span
+                   class="d-inline-block w-100 bg-light px-1 rounded-5">飲用水</span></li>
+                   <li class="col-auto border rounded-1 px-2 d-flex bg-warning flex-column flex-wrap
+                 justify-content-center align-items-center ms-2">
+                  <i class="bi bi bi-badge-hd bg-warning"></i><span
+                   class="d-inline-block w-100 bg-light px-1 rounded-5">TV</span></li>
+                   <li class="col-auto border rounded-1 px-2 d-flex bg-primary flex-column flex-wrap
+                 justify-content-center align-items-center ms-2">
+                  <i class="bi bi bi-wind bg-primary text-white"></i><span
+                   class="d-inline-block w-100 bg-light px-1 rounded-5">吹風機</span></li>
+                   <li class="col-auto border rounded-1 px-2 d-flex
+                    bg-secondary flex-column flex-wrap
+                 justify-content-center align-items-center ms-2">
+                  <i class="bi bi bi-wifi bg-secondary text-white"></i><span
+                   class="d-inline-block w-100 bg-light px-1 rounded-5">WiFi</span></li>
+              </ul>
             </div>
           </div>
         </div>
