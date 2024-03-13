@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-8">
           <table class="table">
-            <thead>
+            <thead v-if="this.carts.length >= 1">
               <tr>
                 <th scope="col" class="border-0 ps-0">品項</th>
                 <th scope="col" class="border-0">數量</th>
@@ -13,7 +13,7 @@
                 <th scope="col" class="border-0"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody v-if="this.carts.length >= 1">
               <tr class="border-bottom border-top" v-for="item in carts" :key="item">
                 <th scope="row" class="border-0 px-0 font-weight-normal py-4">
                   <img
@@ -65,8 +65,14 @@
                 </td>
               </tr>
             </tbody>
+            <tbody v-else>
+              <p class="fs-5 text-center">沒有任何商品，去<router-link
+                 to="/products" class="text-dark fw-bold mx-1 text-muted
+                  text-decoration-none">產品一覽</router-link
+          >挑一個吧！</p>
+            </tbody>
           </table>
-          <div class="input-group w-50 mb-3">
+          <div class="input-group w-50 mb-3" v-if="this.carts.length >= 1">
             <input
               type="text"
               class="form-control rounded-0 border-bottom
@@ -192,6 +198,7 @@ export default {
   },
   mounted() {
     this.getCarts();
+    console.log('this.carts', this.carts);
   },
   data() {
     return {
