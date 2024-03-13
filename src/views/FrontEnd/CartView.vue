@@ -198,7 +198,6 @@ export default {
   },
   mounted() {
     this.getCarts();
-    console.log('this.carts', this.carts);
   },
   data() {
     return {
