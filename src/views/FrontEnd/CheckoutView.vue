@@ -41,7 +41,7 @@
         </div>
         <div class="col-md-6">
           <p>聯絡資訊</p>
-          <v-form>
+          <v-form v-slot="{ errors }">
             <div class="mb-0">
             <label for="ContactMail" class="text-muted mb-0">Email
             </label>
@@ -52,9 +52,11 @@
               class="form-control"
               id="ContactMail"
               placeholder="example@gmail.com"
-              v-model="form.user.email">
+              v-model="form.user.email"
+              :class="{ 'is-invalid': errors['email'] }"
+              >
             </v-field>
-            <ErrorMessage name="email"/>
+            <ErrorMessage class="text-danger" name="email"/>
           </div>
             <div class="mb-2">
               <label for="ContactName" class="text-muted mb-0 mt-2">姓名
@@ -66,9 +68,10 @@
               class="form-control"
               id="ContactName"
               placeholder="王 小明"
-              v-model="form.user.name">
+              v-model="form.user.name"
+              :class="{ 'is-invalid': errors['姓名'] }">
             </v-field>
-            <ErrorMessage name="姓名"/>
+            <ErrorMessage class="text-danger" name="姓名"/>
             </div>
             <div class="mb-2">
               <label for="ContactTel" class="text-muted mb-0 mt-2">電話
@@ -80,9 +83,11 @@
               class="form-control"
               id="ContactTel"
               placeholder="0912345678"
-              v-model="form.user.tel">
+              v-model="form.user.tel"
+              :class="{ 'is-invalid': errors['電話'] }"
+              >
             </v-field>
-            <ErrorMessage name="電話"/>
+            <ErrorMessage class="text-danger" name="電話"/>
             </div>
             <div class="mb-2">
               <label for="ContactAddress" class="text-muted mb-0 mt-2">地址
@@ -94,9 +99,10 @@
               class="form-control"
               id="ContactAddress"
               placeholder="台灣台北市大安區羅斯福利101號"
-              v-model="form.user.address">
+              v-model="form.user.address"
+              :class="{ 'is-invalid': errors['地址'] }">
             </v-field>
-            <ErrorMessage name="地址"/>
+            <ErrorMessage class="text-danger" name="地址"/>
             </div>
             <div class="mb-2">
               <label for="ContactMessage" class="text-muted mb-0">備註</label>
