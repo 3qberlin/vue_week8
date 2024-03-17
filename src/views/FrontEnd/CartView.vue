@@ -123,6 +123,7 @@
               <p class="mb-0 h4 fw-bold">NT${{ this.final_total }}</p>
             </div>
             <RouterLink to="/checkout" class="btn btn-dark w-100 mt-4"
+            :class="{ 'disabled': this.carts.length <= 0 }" tabindex="-1"
               >送出訂單</RouterLink>
           </div>
         </div>
