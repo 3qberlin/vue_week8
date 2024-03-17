@@ -3,14 +3,17 @@
     <div class="mt-3">
       <h3 class="mt-3 mb-4">購物車</h3>
       <div class="row">
-        <div class="col-md-8">
-          <table class="table">
+        <div class="col-md-8 table-responsive">
+          <table class="table table-hover">
             <thead v-if="this.carts.length >= 1">
-              <tr>
+              <tr class="text-nowrap">
                 <th scope="col" class="border-0 ps-0">品項</th>
                 <th scope="col" class="border-0">數量</th>
                 <th scope="col" class="border-0">單價</th>
-                <th scope="col" class="border-0"></th>
+                <th scope="col" class="border-0">刪除</th>
+                <th scope="col" class="border-0 text-danger">
+                  <div class="badge bg-danger fw-normal"
+                   @click="delCarts" style="cursor:pointer">全刪</div></th>
               </tr>
             </thead>
             <tbody v-if="this.carts.length >= 1">
@@ -59,9 +62,11 @@
                 <td class="border-0 align-middle">
                   <p class="mb-0 ms-auto">{{ item.qty * item.product.price }}</p>
                 </td>
-                <td class="border-0 align-middle">
+                <td class="border-0 align-middle text-center">
                   <i class="bi bi-trash3 text-danger" style="cursor:pointer;"
                    @click="delCartItem(item.id)"></i>
+                </td>
+                <td>
                 </td>
               </tr>
             </tbody>
@@ -196,6 +201,13 @@ export default {
       }).catch((err) => {
         this.noneCoupon = err.response.data.message;
         this.countTotal = this.total;
+      });
+    },
+    delCarts() {
+      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/carts`;
+      axios.delete(api).then(() => {
+        this.getCarts();
+      }).catch(() => {
       });
     },
   },
