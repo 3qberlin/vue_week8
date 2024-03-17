@@ -120,7 +120,8 @@
             </table>
             <div class="d-flex justify-content-between mt-4">
               <p class="mb-0 h4 fw-bold">總計</p>
-              <p class="mb-0 h4 fw-bold">NT${{ this.final_total }}</p>
+              <p class="mb-0 h4 fw-bold" v-if="countTotal >= 1">NT${{ this.countTotal }}</p>
+              <p class="mb-0 h4 fw-bold" v-else>NT${{ this.total }}</p>
             </div>
             <RouterLink to="/checkout" class="btn btn-dark w-100 mt-4"
             :class="{ 'disabled': this.carts.length <= 0 }" tabindex="-1"
@@ -189,11 +190,12 @@ export default {
       };
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/coupon`;
       axios.post(api, { data: textContent }).then((res) => {
-        this.final_total = res.data.data.final_total;
+        this.countTotal = res.data.data.final_total;
         this.noneCoupon = '已套用優惠券';
         this.getCarts();
       }).catch((err) => {
         this.noneCoupon = err.response.data.message;
+        this.countTotal = this.total;
       });
     },
   },
@@ -204,6 +206,7 @@ export default {
     return {
       couponContent: '',
       noneCoupon: '',
+      countTotal: 0,
     };
   },
 };
