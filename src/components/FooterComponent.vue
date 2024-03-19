@@ -6,11 +6,13 @@
           class="d-flex align-items-center justify-content-between
            text-white mb-md-7 mb-4"
         >
-          <img
-            src="https://hackmd.io/_uploads/S1atYtYap.png"
-            alt="logo"
-            style="width: 140px; object-fit: cover; cursor: pointer"
-          />
+          <a href="https://3qberlin.github.io/vue_week8/#/home">
+              <img
+                src="https://hackmd.io/_uploads/S1atYtYap.png"
+                alt="logo"
+                style="width: 140px; object-fit: cover; cursor: pointer"
+              />
+          </a>
           <ul class="d-flex list-unstyled mb-0 h4">
             <li>
               <a href="#" class="text-white mx-3"
