@@ -166,7 +166,6 @@ export default {
     },
     reduceProduct(item) {
       const condition = item.qty;
-      console.log('condition', condition);
       if (condition === 1) {
         alert('訂房數量最低為1間，欲刪除整筆請點擊紅色按鈕');
       } else {
