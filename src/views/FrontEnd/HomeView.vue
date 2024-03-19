@@ -67,8 +67,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="row mt-5 g-12 ">
-      <div class="col-12">
+    <div class="col-12 mt-5 ">
         <h2 class="bg-info d-inline-block rounded-2 px-3 text-white shadow
          position-relative">早鳥優惠
         <span class="position-absolute top-100 start-100 bg-warning
@@ -77,61 +76,83 @@
          rounded-5 translate-middle" style="padding:8px;"></span>
         </h2>
       </div>
-      <div class="col-md-4 mt-4">
+    <div class="row mt-2 g-12 row-cols-1 row-cols-xl-3">
+      <div class="col-12 mt-4">
         <div class="card border-0 mb-4 h-100 position-relative">
           <router-link :to="`/product/-NsXF5__aKMguMt1HZ_p`">
           <img
-            src="https://images.unsplash.com/photo-1628745750116-d4e990e4481a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1628745750116-d4e990e4481a?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover cusHover"
             alt="introProduct1"
           />
         </router-link>
-          <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
-           style="width:160px;left:8px;padding:0px 8px;">$ 8015 元起 / 一晚</span>
+        <span class="position-absolute top-50 bg-info rounded-end text-dark mt-2
+          mt-md-3 mx-2 fw-bold cusPosition"
+           style="width:160px;left:4px;;padding:0px 8px;">
+           $ 7771 元起 / 一晚</span>
+          <span class="position-absolute top-50 bg-warning rounded-1
+           text-danger fw-bold mx-2 text-nowrap p-2 px-3 cusPosition"
+            style="right:0;padding:0px 8px;">同行一人免費</span>
           <div class="card-body text-center">
             <h4>卡拖卡尼．親子樂園</h4>
             <div class="d-flex justify-content-between">
               <p class="card-text text-muted mb-0">
-                卡拖卡尼．親子樂園是一處迷人的住宿選擇，為家庭提供了理想的度假體驗。這個樂園擁有豐富多樣的娛樂設施和活動
+                卡拖卡尼．親子樂園是一處迷人的住宿選擇，為家庭提供了理想的度假體驗。豐富多樣的娛樂設施和活動
                 。
               </p>
             </div>
+            <router-link :to="`/product/-NsXF5__aKMguMt1HZ_p`">
+            <button type="button" class="btn btn-info mt-3">搶優惠</button>
+            </router-link>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mt-md-4">
+      <div class="col-12 mt-md-4">
         <div class="card border-0 mb-4 h-100 position-relative">
           <router-link :to="`/product/-NpJQlMsJrn350PZcbyX`">
           <img
-            src="https://plus.unsplash.com/premium_photo-1670360414903-19e5832f8bc4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://plus.unsplash.com/premium_photo-1670360414903-19e5832f8bc4?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover cusHover"
             alt="introProduct2"
           />
         </router-link>
-          <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
-           style="width:160px;left:8px;padding:0px 8px;">$ 2899 元起 / 一晚</span>
+        <span class="position-absolute top-50 bg-info rounded-end text-dark mt-2
+          mt-md-3 mx-2 fw-bold cusPosition"
+           style="width:160px;left:4px;;padding:0px 8px;">
+           $ 2899 元起 / 一晚</span>
+          <span class="position-absolute top-50 bg-warning rounded-1
+           text-danger fw-bold mx-2 text-nowrap p-2 px-3 cusPosition"
+            style="right:0;padding:0px 8px;">國旅補助 80%</span>
           <div class="card-body text-center">
             <h4>伊斯坦堡．歷史風情</h4>
             <div class="d-flex justify-content-between">
               <p class="card-text text-muted mb-0">
-                伊斯坦堡民宿魅力無窮：歷史悠久，風格多樣，地理位置優越。每處皆彷彿是故事場景，
+                伊斯坦堡民宿魅力無窮：歷史悠久，風格多樣，地理位置優越。
                 親切熱情的服務，讓人感受到溫暖。
               </p>
             </div>
+            <router-link :to="`/product/-NpJQlMsJrn350PZcbyX`">
+            <button type="button" class="btn btn-info mt-3">搶優惠</button>
+            </router-link>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mt-md-4">
+      <div class="col-12 mt-md-4">
         <div class="card border-0 mb-4 h-100 position-relative">
           <router-link :to="`/product/-NpDbXPZrVPPW5y-HV88`">
           <img
-            src="https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover cusHover"
             alt="introProduct3"
           />
         </router-link>
-          <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
-           style="width:160px;left:8px;padding:0px 8px;">$ 8899 元起 / 一晚</span>
+          <span class="position-absolute bg-info rounded-end text-dark mt-2
+          mt-md-3 mx-2 fw-bold m-5 cusPosition"
+           style="width:160px;left:4px;top:48%;padding:0px 4px;"
+           >$ 8899 元起 / 一晚</span>
+          <span class="position-absolute bg-warning rounded-1
+           text-danger fw-bold mx-2 text-nowrap p-2 px-3 mb-2 cusPosition"
+            style="right:0;top:48%;padding:8px 8px;">當日前 5 名半價</span>
           <div class="card-body text-center">
             <h4>艾美度假酒店．大縱酒</h4>
             <div class="d-flex justify-content-between">
@@ -140,17 +161,18 @@
                 享受私密沙灘、水上活動、精緻美食，享受完美假期。
               </p>
             </div>
+            <router-link :to="`/product/-NpDbXPZrVPPW5y-HV88`">
+            <button type="button" class="btn btn-info mt-3">搶優惠</button>
+            </router-link>
           </div>
         </div>
       </div>
-      <div>
-        <p class="fs-5 d-flex flex-nowrap justify-content-end">
+    </div>
+    <p class="fs-5 d-flex flex-nowrap justify-content-center justify-content-md-end">
           <router-link to="/products" class="text-muted text-decoration-none
            border-bottom border-warning border-2"
             >看更多<i class="bi bi-arrow-right-circle ms-1"></i></router-link>
           </p>
-      </div>
-    </div>
   </div>
   <div class="bg-light mt-7">
     <div class="container">
@@ -272,5 +294,15 @@ export default {};
 .cusHover:hover, .sponsor img:hover{
   transform: scale(1.1);
   transition-delay: 0.1s;
+}
+
+.cusPosition {
+    top:45% !important;
+  }
+
+  @include media-breakpoint-down(xl) {
+  .cusPosition {
+    top:10% !important;
+  }
 }
 </style>
