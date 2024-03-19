@@ -194,7 +194,7 @@ export default {
       const condition = item.qty;
       if (condition === 1) {
         Swal.fire({
-          title: '最低數量為1筆，欲整筆刪除請按【全刪】',
+          title: '最低數量為1筆',
           showClass: {
             popup: `
       animate__animated
