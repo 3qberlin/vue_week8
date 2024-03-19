@@ -55,8 +55,8 @@
           <div class="card-body">
             <h6><i class="bi bi-exclamation-lg me-1 text-danger"></i>住訂房須知</h6>
             <p>支援所有行動支付</p>
-            <p>透過HexSponser第三方安全支付管理您的付款資訊</p>
-            <p>所有房型皆須付30%訂金，部份房型可免訂金訂房</p>
+            <p>透過 HexSponser 第三方安全支付管理您的付款資訊</p>
+            <p>所有房型皆須付 30% 訂金，部份房型可免訂金訂房</p>
             <p></p>
           </div>
           <div>
@@ -130,8 +130,8 @@
         <p>
           Q：遺失入住證明怎麼辦？
         </p>
-        <p>A：請撥打國際免付費專線0809-777889，將有專人協助處理。或使用<code>
-          serviceTravel@gmail.com</code> 通知我們，我們將於2個小時內回覆並提供必須協助</p>
+        <p>A：請撥打國際免付費專線 0809-777889 ，將有專人協助處理。或使用 <code>
+          serviceTravel@gmail.com </code> 通知我們，我們將於 2 個小時內回覆並提供必須協助</p>
       </div>
     </div>
   </div>
@@ -141,33 +141,29 @@
         <div class="row">
           <div class="col-md-6" v-for="item in products" :key="item.id">
             <div class="card border-0 mb-4 position-relative position-relative">
-              <img
+              <RouterLink :to="`/product/${item.id}`"
+                   class="text-dark text-decoration-none">
+                   <img
                 :src="item.imagesUrl"
                 style="max-height: 350px; min-height: 300px"
-                class="card-img-top rounded-0 object-fit-cover"
+                class="card-img-top rounded-0 object-fit-cover imgCusHover"
                 alt="productImages"
               />
-              <a href="#" class="text-dark">
-                <i
-                  class="far fa-heart position-absolute"
-                  style="right: 16px; top: 16px"
-                ></i>
-              </a>
               <div class="card-body p-0">
                 <h4 class="mb-0 mt-3">
-                  <RouterLink :to="`/product/${item.id}`"
-                   class="text-dark text-decoration-none">{{
+                  {{
                     item.title
-                  }}</RouterLink>
+                  }}
                 </h4>
                 <p class="card-text mb-0">
-                  NT${{ item.price }}
+                  NT$ {{ item.price }}
                   <span class="text-muted"
-                    ><del> NT${{ item.origin_price }}</del></span
+                    ><del> NT$ {{ item.origin_price }}</del></span
                   >
                 </p>
                 <p class="text-muted mt-3"></p>
               </div>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -257,8 +253,8 @@ export default {
           const { products, pagination } = res.data;
           this.products = products;
           this.vuePagination = pagination;
-        }).catch((err) => {
-          alert(err.response.data.message);
+        }).catch(() => {
+          // alert(err.response.data.message);
         });
     },
     createToken() {
@@ -272,3 +268,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.imgCusHover:hover {
+  transform: scale(1.1);
+  transition: transform 1s ease, rotate 1s ease;
+  rotate: 2deg;
+}
+
+.imgCusHover {
+  transition: transform 1s ease, rotate 1s ease;
+}
+</style>
