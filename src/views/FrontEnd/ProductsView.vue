@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-md-5 mt-3 mb-7">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div
           class="accordion border border-bottom border-top-0 border-start-0 border-end-0 mb-3"
           id="accordionExample"
@@ -34,7 +34,7 @@
                     class="py-2 d-block text-muted"
                   >
                     <RouterLink to="/products"
-                     class="text-muted text-decoration-none">全部</RouterLink>
+                     class="text-muted text-decoration-none active">全部</RouterLink>
                   </li>
                   <li
                     v-for="item in categories"
@@ -130,14 +130,14 @@
         <p>
           Q：遺失入住證明怎麼辦？
         </p>
-        <p>A:請撥打國際免付費專線0809-777889，將有專人協助處理。或使用<code>
+        <p>A：請撥打國際免付費專線0809-777889，將有專人協助處理。或使用<code>
           serviceTravel@gmail.com</code> 通知我們，我們將於2個小時內回覆並提供必須協助</p>
       </div>
     </div>
   </div>
 </div>
       </div>
-      <div class="col-md-8 mt-4 mt-md-0">
+      <div class="col-md-9 mt-4 mt-md-0">
         <div class="row">
           <div class="col-md-6" v-for="item in products" :key="item.id">
             <div class="card border-0 mb-4 position-relative position-relative">
