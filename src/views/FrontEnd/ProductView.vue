@@ -109,7 +109,8 @@
         </div>
       </div>
     </div>
-    <h5 class="fw-bold mt-5">{{ product.description }}</h5>
+    <h5 class="fw-bold mt-5 px-md-11 lh-base"
+     style="letter-spacing:2px;">{{ product.description }}</h5>
     <div class="swiper-container mt-4 mb-5">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -124,12 +125,13 @@
               <h4 class="mb-0 mt-3">
                 <a href="#"></a>
               </h4>
-              <p class="card-text mb-0 fs-5">
+              <p class="card-text mb-0 fs-5 px-md-11 lh-base">
                 介紹 <span class="text-muted"></span>
               </p>
-              <p>{{ product.content }}</p>
-              <p class="text-muted mt-3 fs-5">房間設施</p>
-              <ul class="list-unstyled d-flex">
+              <p class=" px-md-11 lh-lg mt-2"
+              style="letter-spacing:3px;">{{ product.content }}</p>
+              <p class="text-muted mt-3 fs-5 px-md-11 lh-base text-end">房間設施</p>
+              <ul class="list-unstyled d-flex px-md-11 justify-content-end">
                 <li class="col-auto border rounded-1 px-2 d-flex bg-info flex-column flex-wrap
                  justify-content-center align-items-center">
                   <i class="bi bi-droplet-fill bg-info"></i><span
