@@ -1,12 +1,12 @@
 <template>
-  <NavComponent></NavComponent>
+  <NavComponent/>
   <router-view></router-view>
   <FooterComponent/>
 </template>
 
 <script>
-import NavComponent from '../components/NavComponent.vue';
-import FooterComponent from '../components/FooterComponent.vue';
+import NavComponent from '@/components/NavComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 
 export default {
   components: {
