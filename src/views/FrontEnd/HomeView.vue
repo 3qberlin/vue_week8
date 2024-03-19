@@ -67,7 +67,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="row mt-5">
+    <div class="row mt-5 g-12 ">
       <div class="col-12">
         <h2 class="bg-info d-inline-block rounded-2 px-3 text-white shadow
          position-relative">早鳥優惠
@@ -79,11 +79,13 @@
       </div>
       <div class="col-md-4 mt-4">
         <div class="card border-0 mb-4 h-100 position-relative">
+          <router-link :to="`/product/-NsXF5__aKMguMt1HZ_p`">
           <img
             src="https://images.unsplash.com/photo-1628745750116-d4e990e4481a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            class="card-img-top rounded-0 object-fit-cover"
+            class="card-img-top rounded-0 object-fit-cover cusHover"
             alt="introProduct1"
           />
+        </router-link>
           <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
            style="width:160px;left:8px;padding:0px 8px;">$ 8015 元起 / 一晚</span>
           <div class="card-body text-center">
@@ -91,7 +93,7 @@
             <div class="d-flex justify-content-between">
               <p class="card-text text-muted mb-0">
                 卡拖卡尼．親子樂園是一處迷人的住宿選擇，為家庭提供了理想的度假體驗。這個樂園擁有豐富多樣的娛樂設施和活動
-                ，適合大人和小孩。來此度假，您將享受到舒適的住宿和愉快的休閒時光，是放鬆身心的理想之地。
+                。
               </p>
             </div>
           </div>
@@ -99,11 +101,13 @@
       </div>
       <div class="col-md-4 mt-md-4">
         <div class="card border-0 mb-4 h-100 position-relative">
+          <router-link :to="`/product/-NpJQlMsJrn350PZcbyX`">
           <img
             src="https://plus.unsplash.com/premium_photo-1670360414903-19e5832f8bc4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            class="card-img-top rounded-0 object-fit-cover"
+            class="card-img-top rounded-0 object-fit-cover cusHover"
             alt="introProduct2"
           />
+        </router-link>
           <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
            style="width:160px;left:8px;padding:0px 8px;">$ 2899 元起 / 一晚</span>
           <div class="card-body text-center">
@@ -111,8 +115,7 @@
             <div class="d-flex justify-content-between">
               <p class="card-text text-muted mb-0">
                 伊斯坦堡民宿魅力無窮：歷史悠久，風格多樣，地理位置優越。每處皆彷彿是故事場景，
-                親切熱情的服務，讓人感受到家的溫暖。
-                交通便捷，鄰近景點，帶給旅人無盡便利。
+                親切熱情的服務，讓人感受到溫暖。
               </p>
             </div>
           </div>
@@ -120,11 +123,13 @@
       </div>
       <div class="col-md-4 mt-md-4">
         <div class="card border-0 mb-4 h-100 position-relative">
+          <router-link :to="`/product/-NpDbXPZrVPPW5y-HV88`">
           <img
             src="https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            class="card-img-top rounded-0 object-fit-cover"
+            class="card-img-top rounded-0 object-fit-cover cusHover"
             alt="introProduct3"
           />
+        </router-link>
           <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
            style="width:160px;left:8px;padding:0px 8px;">$ 8899 元起 / 一晚</span>
           <div class="card-body text-center">
@@ -210,7 +215,7 @@
   <div class="container-fluid bg-light">
     <div class="container">
       <ul class="row d-flex g-3 row-cols-1 row-cols-md-3 list-unstyled mt-4">
-        <li class="card-body rounded-2 text-center">
+        <li class="card-body rounded-2 text-center sponsor">
           <img
             src="https://hackmd.io/_uploads/r1X10X56p.png"
             alt="corporation1"
@@ -218,7 +223,7 @@
             style="width: 200px"
           />
         </li>
-        <li class="card-body rounded-2 text-center">
+        <li class="card-body rounded-2 text-center sponsor">
           <img
             src="https://hackmd.io/_uploads/HJH1CmcTT.png"
             alt="corporation2"
@@ -226,7 +231,7 @@
             style="width: 200px"
           />
         </li>
-        <li class="card-body rounded-2 text-center">
+        <li class="card-body rounded-2 text-center sponsor">
           <img
             src="https://hackmd.io/_uploads/Sy8JCXq6a.png"
             alt="corporation3"
@@ -234,7 +239,7 @@
             style="width: 200px"
           />
         </li>
-        <li class="card-body rounded-2 text-center">
+        <li class="card-body rounded-2 text-center sponsor">
           <img
             src="https://hackmd.io/_uploads/SklD10m9TT.png"
             alt="corporation4"
@@ -242,7 +247,7 @@
             style="width: 200px"
           />
         </li>
-        <li class="card-body rounded-2 text-center">
+        <li class="card-body rounded-2 text-center sponsor">
           <img
             src="https://hackmd.io/_uploads/rkWgA7966.png"
             alt="corporation5"
@@ -258,3 +263,14 @@
 <script>
 export default {};
 </script>
+
+<style scope>
+.cusHover, .sponsor img {
+  transition: transform 1s ease-out;
+}
+
+.cusHover:hover, .sponsor img:hover{
+  transform: scale(1.1);
+  transition-delay: 0.1s;
+}
+</style>
