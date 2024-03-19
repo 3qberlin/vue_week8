@@ -43,7 +43,9 @@
           <p>聯絡資訊</p>
           <v-form v-slot="{ errors }">
             <div class="mb-0">
-            <label for="ContactMail" class="text-muted mb-0">Email
+            <label for="ContactMail" class="text-muted mb-0">
+              <span class="text-danger">*</span>
+               Email
             </label>
             <v-field
               name="email"
@@ -59,7 +61,8 @@
             <ErrorMessage class="text-danger" name="email"/>
           </div>
             <div class="mb-2">
-              <label for="ContactName" class="text-muted mb-0 mt-2">姓名
+              <label for="ContactName" class="text-muted mb-0 mt-2">
+                <span class="text-danger">*</span> 姓名
               </label>
             <v-field
               name="姓名"
@@ -74,7 +77,8 @@
             <ErrorMessage class="text-danger" name="姓名"/>
             </div>
             <div class="mb-2">
-              <label for="ContactTel" class="text-muted mb-0 mt-2">電話
+              <label for="ContactTel" class="text-muted mb-0 mt-2">
+                <span class="text-danger">*</span> 電話
               </label>
             <v-field
               name="電話"
@@ -90,7 +94,8 @@
             <ErrorMessage class="text-danger" name="電話"/>
             </div>
             <div class="mb-2">
-              <label for="ContactAddress" class="text-muted mb-0 mt-2">地址
+              <label for="ContactAddress" class="text-muted mb-0 mt-2">
+                <span class="text-danger">*</span> 地址
               </label>
             <v-field
               name="地址"
