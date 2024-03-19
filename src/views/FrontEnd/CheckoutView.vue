@@ -135,6 +135,8 @@ import cartPinia from '@/stores/cartPinia';
 
 import axios from 'axios';
 
+import Swal from 'sweetalert2';
+
 const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 export default {
@@ -148,7 +150,6 @@ export default {
         product_id: item.product_id,
         qty: item.qty + 1,
       };
-      console.log('cart', cart);
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
       axios.put(api, { data: cart }).then(() => {
         this.carts.qty = cart.qty;
@@ -160,19 +161,10 @@ export default {
         product_id: item.product_id,
         qty: item.qty - 1,
       };
-      console.log('cart', cart);
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
       axios.put(api, { data: cart }).then(() => {
         this.carts.qty = cart.qty;
         this.getCarts();
-      });
-    },
-    delCartItem(item) {
-      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item}`;
-      axios.delete(api).then(() => {
-        this.getCarts();
-      }).catch((err) => {
-        alert(err.response.data.message);
       });
     },
     couponTicket() {
@@ -191,8 +183,12 @@ export default {
       axios.post(api, { data: order }).then(() => {
         this.$router.push({ name: 'checkoutSuccess' });
         this.getCarts();
-      }).catch((err) => {
-        alert(err.response.data.message);
+      }).catch(() => {
+        Swal.fire({
+          icon: 'error',
+          title: '表單未正確填寫',
+          text: '請依提示填寫',
+        });
       });
     },
   },

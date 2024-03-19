@@ -2,6 +2,8 @@ import { defineStore } from 'pinia';
 
 import axios from 'axios';
 
+import Swal from 'sweetalert2';
+
 const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 export default defineStore('cartPinia', {
@@ -25,7 +27,23 @@ export default defineStore('cartPinia', {
       };
       axios.post(`${VITE_API_URL}api/${VITE_API_NAME}/cart`, { data: order })
         .then(() => {
-          alert('產品已加入購物車');
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              // eslint-disable-next-line no-param-reassign
+              toast.onmouseenter = Swal.stopTimer;
+              // eslint-disable-next-line no-param-reassign
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+          });
+          Toast.fire({
+            icon: 'success',
+            title: '成功加入購物車',
+          });
           this.getCarts();
         });
     },

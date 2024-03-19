@@ -12,12 +12,22 @@
                 <th scope="col" class="border-0">單價</th>
                 <th scope="col" class="border-0">刪除</th>
                 <th scope="col" class="border-0 text-danger">
-                  <div class="badge bg-danger fw-normal"
-                   @click="delCarts" style="cursor:pointer">全刪</div></th>
+                  <div
+                    class="badge bg-danger fw-normal"
+                    @click="delCarts"
+                    style="cursor: pointer"
+                  >
+                    全刪
+                  </div>
+                </th>
               </tr>
             </thead>
             <tbody v-if="this.carts.length >= 1">
-              <tr class="border-bottom border-top" v-for="item in carts" :key="item">
+              <tr
+                class="border-bottom border-top"
+                v-for="item in carts"
+                :key="item"
+              >
                 <th scope="row" class="border-0 px-0 font-weight-normal py-4">
                   <img
                     :src="item.product.imagesUrl"
@@ -34,9 +44,9 @@
                       <button
                         class="btn btn-outline-dark border-0 py-2"
                         type="button"
-                        id="button-addon1"
+                        id="button-addon1" @click="reduceProduct(item)"
                       >
-                      <i class="bi bi-dash" @click="reduceProduct(item)"></i>
+                        <i class="bi bi-dash"></i>
                       </button>
                     </div>
                     <input
@@ -52,36 +62,43 @@
                       <button
                         class="btn btn-outline-dark border-0 py-2"
                         type="button"
-                        id="button-addon2"
+                        id="button-addon2" @click="addProduct(item)"
                       >
-                      <i class="bi bi-plus-lg" @click="addProduct(item)"></i>
+                        <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
                   </div>
                 </td>
                 <td class="border-0 align-middle">
-                  <p class="mb-0 ms-auto">{{ item.qty * item.product.price }}</p>
+                  <p class="mb-0 ms-auto">
+                    {{ item.qty * item.product.price }}
+                  </p>
                 </td>
                 <td class="border-0 align-middle text-center">
-                  <i class="bi bi-trash3 text-danger" style="cursor:pointer;"
-                   @click="delCartItem(item.id)"></i>
+                  <i
+                    class="bi bi-trash3 text-danger"
+                    style="cursor: pointer"
+                    @click="delCartItem(item.id)"
+                  ></i>
                 </td>
-                <td>
-                </td>
+                <td></td>
               </tr>
             </tbody>
             <tbody v-else>
-              <p class="fs-5 text-center">沒有任何商品，去<router-link
-                 to="/products" class="text-dark fw-bold mx-1 text-muted
-                  text-decoration-none">產品一覽</router-link
-          >挑一個吧！</p>
+              <p class="fs-5 text-center">
+                沒有任何商品，去<router-link
+                  to="/products"
+                  class="text-dark fw-bold mx-1 text-muted text-decoration-none"
+                  >產品一覽</router-link
+                >挑一個吧！
+              </p>
             </tbody>
           </table>
           <div class="input-group w-50 mb-3" v-if="this.carts.length >= 1">
             <input
               type="text"
-              class="form-control rounded-0 border-bottom
-               border-top-0 border-start-0 border-end-0 shadow-none"
+              class="form-control rounded-0 border-bottom border-top-0
+               border-start-0 border-end-0 shadow-none"
               placeholder="Coupon Code"
               aria-label="Recipient's username"
               aria-describedby="button-addon2"
@@ -89,12 +106,12 @@
             />
             <div class="input-group-append">
               <button
-                class="btn btn-outline-dark border-bottom
-                 border-top-0 border-start-0 border-end-0 rounded-0"
+                class="btn btn-outline-dark border-bottom border-top-0
+                 border-start-0 border-end-0 rounded-0"
                 type="button"
                 id="button-addon2"
               >
-              <i class="bi bi-ticket-perforated" @click="couponTicket"></i>
+                <i class="bi bi-ticket-perforated" @click="couponTicket"></i>
               </button>
               <span v-if="this.noneCoupon">{{ this.noneCoupon }}</span>
             </div>
@@ -109,7 +126,8 @@
                   <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">
                     小計
                   </th>
-                  <td class="text-end border-0 px-0 pt-4">NT${{ this.total }}
+                  <td class="text-end border-0 px-0 pt-4">
+                    NT${{ this.total }}
                   </td>
                 </tr>
                 <tr>
@@ -125,12 +143,18 @@
             </table>
             <div class="d-flex justify-content-between mt-4">
               <p class="mb-0 h4 fw-bold">總計</p>
-              <p class="mb-0 h4 fw-bold" v-if="countTotal >= 1">NT${{ this.countTotal }}</p>
+              <p class="mb-0 h4 fw-bold" v-if="countTotal >= 1">
+                NT${{ this.countTotal }}
+              </p>
               <p class="mb-0 h4 fw-bold" v-else>NT${{ this.total }}</p>
             </div>
-            <RouterLink to="/checkout" class="btn btn-dark w-100 mt-4"
-            :class="{ 'disabled': this.carts.length <= 0 }" tabindex="-1"
-              >送出訂單</RouterLink>
+            <RouterLink
+              to="/checkout"
+              class="btn btn-dark w-100 mt-4"
+              :class="{ disabled: this.carts.length <= 0 }"
+              tabindex="-1"
+              >送出訂單</RouterLink
+            >
           </div>
         </div>
       </div>
@@ -144,6 +168,8 @@ import { mapActions, mapState } from 'pinia';
 import cartPinia from '@/stores/cartPinia';
 
 import axios from 'axios';
+
+import Swal from 'sweetalert2';
 
 const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
@@ -167,7 +193,23 @@ export default {
     reduceProduct(item) {
       const condition = item.qty;
       if (condition === 1) {
-        alert('訂房數量最低為1間，欲刪除整筆請點擊紅色按鈕');
+        Swal.fire({
+          title: '最低數量為1筆，欲整筆刪除請按【全刪】',
+          showClass: {
+            popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `,
+          },
+          hideClass: {
+            popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `,
+          },
+        });
       } else {
         const cart = {
           product_id: item.product_id,
@@ -182,32 +224,56 @@ export default {
     },
     delCartItem(item) {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item}`;
-      axios.delete(api).then(() => {
-        this.getCarts();
-      }).catch((err) => {
-        alert(err.response.data.message);
-      });
+      axios
+        .delete(api)
+        .then(() => {
+          this.getCarts();
+        })
+        .catch(() => {
+        });
     },
     couponTicket() {
       const textContent = {
         code: this.couponContent,
       };
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/coupon`;
-      axios.post(api, { data: textContent }).then((res) => {
-        this.countTotal = res.data.data.final_total;
-        this.noneCoupon = '已套用優惠券';
-        this.getCarts();
-      }).catch((err) => {
-        this.noneCoupon = err.response.data.message;
-        this.countTotal = this.total;
-      });
+      axios
+        .post(api, { data: textContent })
+        .then((res) => {
+          this.countTotal = res.data.data.final_total;
+          this.noneCoupon = '已套用優惠券';
+          this.getCarts();
+        })
+        .catch((err) => {
+          this.noneCoupon = err.response.data.message;
+          this.countTotal = this.total;
+        });
     },
     delCarts() {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/carts`;
-      axios.delete(api).then(() => {
-        this.getCarts();
-      }).catch(() => {
-      });
+      axios
+        .delete(api)
+        .then(() => {
+          Swal.fire({
+            title: '刪除確認',
+            text: '確定刪除全部商品？',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '確認刪除!',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: '購物車已清空',
+                text: '商品清空',
+                icon: 'success',
+              });
+              this.getCarts();
+            }
+          });
+        })
+        .catch(() => {});
     },
   },
   mounted() {
