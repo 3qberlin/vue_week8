@@ -88,7 +88,8 @@
               <p class="fs-5 text-center">
                 沒有任何商品，去<router-link
                   to="/products"
-                  class="text-dark fw-bold mx-1 text-muted text-decoration-none"
+                  class="fw-normal text-decoration-none
+                   btn btn-sm bg-dark mx-3 text-white"
                   >產品一覽</router-link
                 >挑一個吧！
               </p>
@@ -148,13 +149,12 @@
               </p>
               <p class="mb-0 h4 fw-bold" v-else>NT${{ this.total }}</p>
             </div>
-            <RouterLink
-              to="/checkout"
-              class="btn btn-dark w-100 mt-4"
-              :class="{ disabled: this.carts.length <= 0 }"
-              tabindex="-1"
-              >送出訂單</RouterLink
-            >
+              <RouterLink
+              to="/checkout">
+            <button v-if="this.carts.length <= 0"
+               class="btn btn-dark w-100 mt-4" disabled tabindex="-1">先選購商品吧</button>
+            <button v-else class="btn btn-dark w-100 mt-4">送出訂單</button>
+            </RouterLink>
           </div>
         </div>
       </div>
