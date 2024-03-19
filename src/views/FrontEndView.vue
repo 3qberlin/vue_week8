@@ -34,8 +34,10 @@
             align-items-start text-white"
         >
           <div class="mb-md-0 mb-1">
-            <p class="mb-0">02-3456-7890</p>
-            <p class="mb-0">serviceTravel@gmail.com</p>
+            <p class="mb-0"><a href=":tel:02-3456-7890"
+               class="text-white text-decoration-none">02-3456-7890</a></p>
+            <p class="mb-0"><a href="mailto:serviceTravel@gmail.com"
+              class="text-white text-decoration-none">serviceTravel@gmail.com</a></p>
           </div>
           <p class="mb-0">© 2024 Home Travel All Rights Reserved.</p>
         </div>
