@@ -21,7 +21,7 @@
                 <th scope="row" class="border-0 px-0 font-weight-normal py-4">
                   <img
                     :src="item.product.imagesUrl"
-                    alt=""
+                    alt="images"
                     style="width: 72px; height: 72px; object-fit: cover"
                   />
                   <p class="mb-0 fw-bold ms-3 d-inline-block">

@@ -20,7 +20,7 @@
               <img
                 :src="pic"
                 class="d-block w-100 object-fit-cover"
-                alt="..."
+                alt="images"
               />
             </div>
           </div>
@@ -117,7 +117,7 @@
             <img
               :src="product.imageUrl"
               class="card-img-top rounded-0"
-              alt="..."
+              alt="images"
             />
             <a href="#" class="text-dark"> </a>
             <div class="card-body p-0">

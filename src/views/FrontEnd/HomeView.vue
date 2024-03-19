@@ -82,7 +82,7 @@
           <img
             src="https://images.unsplash.com/photo-1628745750116-d4e990e4481a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover"
-            alt="..."
+            alt="introProduct1"
           />
           <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
            style="width:160px;left:8px;padding:0px 8px;">$ 8015 元起 / 一晚</span>
@@ -102,7 +102,7 @@
           <img
             src="https://plus.unsplash.com/premium_photo-1670360414903-19e5832f8bc4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover"
-            alt="..."
+            alt="introProduct2"
           />
           <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
            style="width:160px;left:8px;padding:0px 8px;">$ 2899 元起 / 一晚</span>
@@ -123,7 +123,7 @@
           <img
             src="https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top rounded-0 object-fit-cover"
-            alt="..."
+            alt="introProduct3"
           />
           <span class="position-absolute top-50 bg-info rounded-end text-dark fw-bold"
            style="width:160px;left:8px;padding:0px 8px;">$ 8899 元起 / 一晚</span>
@@ -173,7 +173,7 @@
       <div class="col-md-6">
         <img
           src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
+          alt="promote1"
           class="img-fluid"
         />
       </div>
@@ -190,7 +190,7 @@
       <div class="col-md-6">
         <img
           src="https://images.unsplash.com/photo-1625834318071-f28f0e51449b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
+          alt="promote2"
           class="img-fluid"
         />
       </div>
@@ -213,7 +213,7 @@
         <li class="card-body rounded-2 text-center">
           <img
             src="https://hackmd.io/_uploads/r1X10X56p.png"
-            alt="cor"
+            alt="corporation1"
             class="object-fit-cover"
             style="width: 200px"
           />
@@ -221,7 +221,7 @@
         <li class="card-body rounded-2 text-center">
           <img
             src="https://hackmd.io/_uploads/HJH1CmcTT.png"
-            alt="cor"
+            alt="corporation2"
             class="object-fit-cover"
             style="width: 200px"
           />
@@ -229,7 +229,7 @@
         <li class="card-body rounded-2 text-center">
           <img
             src="https://hackmd.io/_uploads/Sy8JCXq6a.png"
-            alt="cor"
+            alt="corporation3"
             class="object-fit-cover"
             style="width: 200px"
           />
@@ -237,7 +237,7 @@
         <li class="card-body rounded-2 text-center">
           <img
             src="https://hackmd.io/_uploads/SklD10m9TT.png"
-            alt="cor"
+            alt="corporation4"
             class="object-fit-cover"
             style="width: 200px"
           />
@@ -245,7 +245,7 @@
         <li class="card-body rounded-2 text-center">
           <img
             src="https://hackmd.io/_uploads/rkWgA7966.png"
-            alt="cor"
+            alt="corporation5"
             class="object-fit-cover"
             style="width: 200px"
           />

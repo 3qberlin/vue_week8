@@ -145,7 +145,7 @@
                 :src="item.imagesUrl"
                 style="max-height: 350px; min-height: 300px"
                 class="card-img-top rounded-0 object-fit-cover"
-                alt="..."
+                alt="productImages"
               />
               <a href="#" class="text-dark">
                 <i

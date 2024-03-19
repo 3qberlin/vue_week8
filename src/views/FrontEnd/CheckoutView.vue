@@ -9,7 +9,7 @@
         <div class="col-md-4">
           <div class="border p-4 mb-4">
             <div class="d-flex"  v-for="item in carts" :key="item">
-              <img :src="item.product.imagesUrl" alt="" class="me-2"
+              <img :src="item.product.imagesUrl" alt="productImages" class="me-2"
                style="width: 48px; height: 48px; object-fit: cover">
               <div class="w-100">
                 <div class="d-flex justify-content-between">
