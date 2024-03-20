@@ -34,7 +34,9 @@
                     class="py-2 d-block text-muted"
                   >
                     <RouterLink to="/products"
-                     class="text-muted text-decoration-none active">全部</RouterLink>
+                     class="text-muted text-decoration-none"
+                     :class="{ 'linked': $route.query.category == item }"
+                     >全部</RouterLink>
                   </li>
                   <li
                     v-for="item in categories"
@@ -42,7 +44,8 @@
                     class="py-2 d-block text-muted"
                   >
                     <RouterLink :to="`/products?category=${item}`"
-                     class="text-muted text-decoration-none">{{
+                     class="text-muted text-decoration-none"
+                     :class="{ 'linked': $route.query.category === item }">{{
                       item
                     }}</RouterLink>
                   </li>
@@ -278,5 +281,10 @@ export default {
 
 .imgCusHover {
   transition: transform 1s ease, rotate 1s ease;
+}
+
+.linked {
+  color: red !important;
+  font-weight:bold;
 }
 </style>
