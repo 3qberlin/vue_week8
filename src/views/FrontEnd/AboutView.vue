@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="about-us">
-      <div class="container mt-7" style="margin-bottom:120px;">
+      <div class="container mt-3 mt-md-7 mb-3 mb-md-7">
         <div class="row">
           <div class="col-md-6">
             <div class="about-img">
-              <img src="https://images.unsplash.com/photo-1685044922425-b246f77a969f?q=80&w=2156&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="bestSite1" />
+              <img src="https://images.unsplash.com/photo-1685044922425-b246f77a969f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="bestSite1" />
             </div>
           </div>
           <div class="col-md-6">
