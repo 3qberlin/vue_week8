@@ -1,6 +1,6 @@
 <template>
   <div class="container d-flex flex-column">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light position-relative">
       <router-link to="/home" class="navbar-brand">
         <img src="https://hackmd.io/_uploads/S1atYtYap.png" alt="logo"
          style="width:96px;">
@@ -17,17 +17,20 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        class="collapse navbar-collapse justify-content-end"
+        class="collapse navbar-collapse justify-content-end "
         id="navbarNavAltMarkup"
       >
-        <div class="navbar-nav">
-          <router-link to="/about" class="nav-item nav-link me-4"
+        <div class="navbar-nav text-center"
+         >
+          <router-link to="/about" class="nav-item nav-link my-3 mx-1"
             >關於我們</router-link
           >
-          <router-link to="/products" class="nav-item nav-link me-4"
+          <router-link to="/products" class="nav-item nav-link my-3 mx-1"
+          @click="closeMenu()"
             >產品一覽</router-link
           >
-          <router-link to="/cart" v-if="this.carts" class="nav-item nav-link">
+          <router-link to="/cart" v-if="this.carts" class="nav-item nav-link d-flex
+          justify-content-center my-3 mx-2">
             <i class="bi bi-cart position-absolute">
               <span
                 class="position-absolute top-0 start-100
@@ -55,6 +58,15 @@ export default {
   },
   methods: {
     ...mapActions(cartPinia, ['getCarts', 'pinia_carts', 'carts']),
+    closeMenu() {
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const navItem = document.querySelectorAll('.nav-item');
+      navItem.forEach((el) => {
+        el.addEventListener('click', () => {
+          navbarToggler.click();
+        });
+      });
+    },
   },
   mounted() {
     this.getCarts();
@@ -68,4 +80,17 @@ export default {
   transform: scale(1.1);
   transition: all 2s ease-out 1s;
 }
+
+@include media-breakpoint-down(lg){
+  .navbar {
+  z-index:5;
+  position:absolute;
+  left:0;
+  top:0;
+  /* style="height:calc(100vh - 130px)" */
+  height:calc(100vh - 130px);
+  background-color:gray;
+}
+}
+
 </style>

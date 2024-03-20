@@ -305,4 +305,12 @@ export default {};
     top:10% !important;
   }
 }
+
+.container .position-absolute{
+  z-index: 1;
+}
+
+#carouselExampleCaptions {
+  z-index: 1;
+}
 </style>
