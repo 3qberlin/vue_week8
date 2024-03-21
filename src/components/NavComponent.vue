@@ -78,7 +78,7 @@ export default {
 .navbar-brand:hover, .nav-item:hover{
   color:rgb(30, 30, 30) !important;
   transform: scale(1.1);
-  transition: all 2s ease-out 1s;
+  transition: all 0.6s ease-in-out;
 }
 
 @include media-breakpoint-down(lg){
