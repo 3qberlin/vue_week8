@@ -160,6 +160,10 @@
       </div>
     </div>
   </div>
+  <loading
+    v-model:active="isLoading"
+    :can-cancel="true"
+    :is-full-page="fullPage"/>
 </template>
 
 <script>
@@ -168,6 +172,8 @@ import { mapActions, mapState } from 'pinia';
 import cartPinia from '@/stores/cartPinia';
 
 import axios from 'axios';
+
+import Loading from 'vue-loading-overlay';
 
 import Swal from 'sweetalert2';
 
@@ -184,11 +190,20 @@ export default {
         product_id: item.product_id,
         qty: item.qty + 1,
       };
-      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
-      axios.put(api, { data: cart }).then(() => {
-        this.carts.qty = cart.qty;
-        this.getCarts();
-      });
+      this.showLoading();
+      setTimeout(() => {
+        const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
+        axios.put(api, { data: cart }).then(() => {
+          this.carts.qty = cart.qty;
+          this.getCarts();
+        });
+      }, 500);
+    },
+    showLoading() {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 900);
     },
     reduceProduct(item) {
       const condition = item.qty;
@@ -215,6 +230,7 @@ export default {
           product_id: item.product_id,
           qty: item.qty - 1,
         };
+        this.showLoading();
         const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
         axios.put(api, { data: cart }).then(() => {
           this.carts.qty = cart.qty;
@@ -223,6 +239,7 @@ export default {
       }
     },
     delCartItem(item) {
+      this.showLoading();
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item}`;
       axios
         .delete(api)
@@ -237,6 +254,7 @@ export default {
         code: this.couponContent,
       };
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/coupon`;
+      this.showLoading();
       axios
         .post(api, { data: textContent })
         .then((res) => {
@@ -257,11 +275,12 @@ export default {
       Swal.fire({
         title: '刪除確認',
         text: '確定刪除全部商品？',
-        con: 'warning',
+        icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: '確認刪除!',
+        confirmButtonText: '確認刪除',
+        cancelButtonText: '取消',
       }).then((result) => {
         if (result.isConfirmed) {
           axios
@@ -288,7 +307,12 @@ export default {
       noneCoupon: '',
       countTotal: 0,
       couponStatus: false,
+      isLoading: false,
+      fullPage: true,
     };
+  },
+  components: {
+    Loading,
   },
 };
 </script>
