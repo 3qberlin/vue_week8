@@ -57,6 +57,8 @@
                       aria-describedby="button-addon1"
                       :value="item.qty"
                       :id="item.id"
+                      :qty = item.qty
+                      @change="updateQty($event, item)"
                     />
                     <div class="input-group-append">
                       <button
@@ -297,6 +299,22 @@ export default {
         }
       });
     },
+    updateQty(event, item) {
+      const newValue = parseInt(event.target.value, 10);
+      const api = `${VITE_API_URL}/api/${VITE_API_NAME}/cart/${item.id}`;
+      const cart = {
+        product_id: item.product_id,
+        qty: newValue,
+      };
+      if (newValue >= 1 && newValue <= 20) {
+        axios.put(api, { data: cart }).then(() => {
+          this.carts.qty = cart.qty;
+          this.getCarts();
+        });
+      } else {
+        Swal.fire('請輸入1以上，20以內的數量');
+      }
+    },
   },
   mounted() {
     this.getCarts();
@@ -309,6 +327,7 @@ export default {
       couponStatus: false,
       isLoading: false,
       fullPage: true,
+      qty: 0,
     };
   },
   components: {
