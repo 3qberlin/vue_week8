@@ -31,7 +31,7 @@ export default defineStore('cartPinia', {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 3000,
+            timer: 1500,
             timerProgressBar: true,
             didOpen: (toast) => {
               // eslint-disable-next-line no-param-reassign
