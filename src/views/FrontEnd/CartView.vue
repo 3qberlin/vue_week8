@@ -144,8 +144,8 @@
             </table>
             <div class="d-flex justify-content-between mt-4">
               <p class="mb-0 h4 fw-bold">總計</p>
-              <p class="mb-0 h4 fw-bold" v-if="countTotal >= 1">
-                NT${{ this.countTotal }}
+              <p class="mb-0 h4 fw-bold" v-if="couponStatus">
+                NT${{ this.final_total }}
               </p>
               <p class="mb-0 h4 fw-bold" v-else>NT${{ this.total }}</p>
             </div>
@@ -240,13 +240,16 @@ export default {
       axios
         .post(api, { data: textContent })
         .then((res) => {
-          this.countTotal = res.data.data.final_total;
+          this.final_total = res.data.data.final_total;
           this.noneCoupon = '已套用優惠券';
+          this.couponStatus = true;
           this.getCarts();
         })
         .catch((err) => {
           this.noneCoupon = err.response.data.message;
-          this.countTotal = this.total;
+          this.final_total = this.total;
+          this.couponStatus = false;
+          this.getCarts();
         });
     },
     delCarts() {
@@ -284,6 +287,7 @@ export default {
       couponContent: '',
       noneCoupon: '',
       countTotal: 0,
+      couponStatus: false,
     };
   },
 };
