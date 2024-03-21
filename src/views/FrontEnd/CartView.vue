@@ -254,29 +254,29 @@ export default {
     },
     delCarts() {
       const api = `${VITE_API_URL}/api/${VITE_API_NAME}/carts`;
-      axios
-        .delete(api)
-        .then(() => {
-          Swal.fire({
-            title: '刪除確認',
-            text: '確定刪除全部商品？',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: '確認刪除!',
-          }).then((result) => {
-            if (result.isConfirmed) {
+      Swal.fire({
+        title: '刪除確認',
+        text: '確定刪除全部商品？',
+        con: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '確認刪除!',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axios
+            .delete(api)
+            .then(() => {
+              this.getCarts();
               Swal.fire({
                 title: '購物車已清空',
                 text: '商品清空',
                 icon: 'success',
               });
-              this.getCarts();
-            }
-          });
-        })
-        .catch(() => {});
+            })
+            .catch(() => {});
+        }
+      });
     },
   },
   mounted() {
