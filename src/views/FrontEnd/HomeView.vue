@@ -94,10 +94,10 @@
            text-danger fw-bold mx-2 text-nowrap p-2 px-3 cusPosition"
             style="right:0;padding:0px 8px;">同行一人免費</span>
           <div class="card-body text-center">
-            <h4>卡拖卡尼．親子樂園</h4>
+            <h4>卡托卡尼．親子樂園</h4>
             <div class="d-flex justify-content-between">
               <p class="card-text text-muted mb-0">
-                卡拖卡尼．親子樂園是一處迷人的住宿選擇，為家庭提供了理想的度假體驗。豐富多樣的娛樂設施和活動
+                卡托卡尼．親子樂園是一處迷人的住宿選擇，為家庭提供了理想的度假體驗。豐富多樣的娛樂設施和活動
                 。
               </p>
             </div>
