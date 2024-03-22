@@ -2,7 +2,8 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './assets/all.scss';
-
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
 import 'vue-loading-overlay/dist/css/index.css';
 import {
   Field, Form, ErrorMessage, defineRule, configure,
@@ -39,6 +40,8 @@ app.use(router);
 app.use(LoadingPlugin, {
   color: '#FF0000',
 });
+
+app.component('VueDatePicker', VueDatePicker);
 // 掛載 Global 的 VeeValidate 元件
 app.component('VField', Field);
 app.component('VForm', Form);

@@ -1,4 +1,5 @@
 <template>
+  <Travel-Conditions></Travel-Conditions>
   <div class="container">
     <div class="row align-items-center">
       <div class="collapse" id="collapseExample">
@@ -72,7 +73,6 @@
                   type="button"
                   id="button-addon1"
                 >
-                  <!-- <i class="bi bi-dash"></i> -->
                 </button>
               </div>
               <input
@@ -164,6 +164,8 @@ import cartPinia from '@/stores/cartPinia';
 
 import axios from 'axios';
 
+import TravelConditions from '@/components/TravelConditions.vue';
+
 const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 export default {
@@ -185,6 +187,9 @@ export default {
   },
   mounted() {
     this.getProduct();
+  },
+  components: {
+    TravelConditions,
   },
 };
 </script>

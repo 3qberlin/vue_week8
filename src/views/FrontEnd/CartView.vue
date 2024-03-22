@@ -1,4 +1,5 @@
 <template>
+  <TravelConditions/>
   <div class="container">
     <div class="mt-3">
       <h3 class="mt-3 mb-4">購物車</h3>
@@ -179,6 +180,8 @@ import Loading from 'vue-loading-overlay';
 
 import Swal from 'sweetalert2';
 
+import TravelConditions from '@/components/TravelConditions.vue';
+
 const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 export default {
@@ -332,6 +335,7 @@ export default {
   },
   components: {
     Loading,
+    TravelConditions,
   },
 };
 </script>
