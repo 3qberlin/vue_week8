@@ -43,7 +43,7 @@ const routes = [
       },
       {
         path: '/:pathMatch(.*)*',
-        component: () => import('../views/FrontEnd/PageNotFouncView.vue'),
+        component: () => import('../views/FrontEnd/PageNotFoundView.vue'),
       },
     ],
   },

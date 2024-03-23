@@ -88,7 +88,6 @@ export default {
   position:absolute;
   left:0;
   top:0;
-  /* style="height:calc(100vh - 130px)" */
   height:calc(100vh - 130px);
   background-color:gray;
 }
