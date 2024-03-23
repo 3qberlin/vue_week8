@@ -8,7 +8,7 @@
           <Auto-Range></Auto-Range>
         </div>
       </div>
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         <p class="m-1">地點</p>
         <div class="p-2">
           <select class="form-select" v-model="selectedLocation"
@@ -17,7 +17,7 @@
             <option v-for="area in location" :key="area">{{ area }}</option>
           </select>
         </div>
-      </div>
+      </div> -->
       <div class="col-lg-4">
         <p class="m-1">
           人數<span class="text-danger ms-2">*</span>
@@ -50,10 +50,10 @@ export default {
     AutoRange,
   },
   methods: {
-    ...mapActions(travelConditionsPinia, ['setLocation', 'setPeople']),
+    ...mapActions(travelConditionsPinia, ['setPeople']),
   },
   computed: {
-    ...mapState(travelConditionsPinia, ['selectedLocation', 'selectedPeople', 'location']),
+    ...mapState(travelConditionsPinia, ['selectedPeople']),
   },
 };
 </script>

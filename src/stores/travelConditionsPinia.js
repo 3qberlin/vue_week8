@@ -2,8 +2,8 @@ import { defineStore } from 'pinia';
 
 export default defineStore('travelConditionsPinia', {
   state: () => ({
-    selectedLocation: null,
-    selectedPeople: null,
+    // selectedLocation: null,
+    selectedPeople: '隨便',
     location: [
       '卡托卡尼',
       '伊斯坦堡',
@@ -18,15 +18,15 @@ export default defineStore('travelConditionsPinia', {
     ],
   }),
   actions: {
-    setLocation(location) {
-      this.selectedLocation = location;
-      console.log('this.selectedLocation', this.selectedLocation);
-      console.log('this.location', this.location);
-    },
+    // setLocation(location) {
+    //   this.selectedLocation = location;
+    //   console.log('this.selectedLocation', this.selectedLocation);
+    //   console.log('this.location', this.location);
+    // },
     setPeople(people) {
       this.selectedPeople = people;
-      console.log('this.selectedPeople', this.selectedPeople);
-      console.log('this.people', this.people);
+      // console.log('this.selectedPeople', this.selectedPeople);
+      // console.log('this.people', this.people);
     },
   },
 });
