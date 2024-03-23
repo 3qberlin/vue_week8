@@ -35,7 +35,7 @@
                     <RouterLink
                       to="/products"
                       class="text-muted text-decoration-none"
-                      :class="{ linked: $route.query.category == item }"
+                      :class="{ linked: !$route.query.category }"
                       >全部</RouterLink
                     >
                   </li>

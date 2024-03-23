@@ -57,7 +57,7 @@ export default {
     ...mapState(cartPinia, ['carts', 'final_total', 'total']),
   },
   methods: {
-    ...mapActions(cartPinia, ['getCarts', 'pinia_carts', 'carts']),
+    ...mapActions(cartPinia, ['getCarts', 'pinia_carts']),
     closeMenu() {
       const navbarToggler = document.querySelector('.navbar-toggler');
       const navItem = document.querySelectorAll('.nav-item');
@@ -70,6 +70,7 @@ export default {
   },
   mounted() {
     this.getCarts();
+    // this.$router.push({ name: 'home' });
   },
 };
 </script>
