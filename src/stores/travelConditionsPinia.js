@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 export default defineStore('travelConditionsPinia', {
   state: () => ({
-    selectedPeople: '隨便',
+    selectedPeople: 0,
     location: [
       '卡托卡尼',
       '伊斯坦堡',

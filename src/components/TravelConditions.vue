@@ -22,7 +22,7 @@
         <div class="p-2">
           <select class="form-select" v-model="selectedPeople"
            @change="setPeople($event.target.value)">
-            <option value="隨便" disabled selected>
+            <option value="0" disabled selected>
               孩童視為成人，以一位計算
             </option>
             <option v-for="i in 10" :key="i">{{ i }}</option>
