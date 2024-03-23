@@ -274,7 +274,6 @@ export default {
         this.getProducts();
       },
     },
-    deep: true,
   },
   methods: {
     getProducts() {
