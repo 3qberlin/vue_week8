@@ -2,7 +2,6 @@ import { defineStore } from 'pinia';
 
 export default defineStore('travelConditionsPinia', {
   state: () => ({
-    // selectedLocation: null,
     selectedPeople: '隨便',
     location: [
       '卡托卡尼',
@@ -16,17 +15,20 @@ export default defineStore('travelConditionsPinia', {
       '亞庇',
       '艾美度假酒店',
     ],
+    startTime: null,
+    endTime: null,
   }),
   actions: {
-    // setLocation(location) {
-    //   this.selectedLocation = location;
-    //   console.log('this.selectedLocation', this.selectedLocation);
-    //   console.log('this.location', this.location);
-    // },
     setPeople(people) {
       this.selectedPeople = people;
-      // console.log('this.selectedPeople', this.selectedPeople);
-      // console.log('this.people', this.people);
+    },
+    getStart(event) {
+      const startTime = event.target.value;
+      console.log('startTime', startTime);
+    },
+    getEnd(event) {
+      const endTime = event.target.value;
+      console.log('endTime', endTime);
     },
   },
 });

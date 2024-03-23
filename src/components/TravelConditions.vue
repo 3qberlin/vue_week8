@@ -41,7 +41,7 @@ import travelConditionsPinia from '@/stores/travelConditionsPinia';
 
 export default {
   methods: {
-    ...mapActions(travelConditionsPinia, ['setPeople']),
+    ...mapActions(travelConditionsPinia, ['setPeople', 'getStart', 'getEnd']),
     getStart(event) {
       const startTime = event.target.value;
       console.log('startTime', startTime);
@@ -52,13 +52,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(travelConditionsPinia, ['selectedPeople']),
-  },
-  data() {
-    return {
-      startTime: null,
-      endTime: null,
-    };
+    ...mapState(travelConditionsPinia, ['selectedPeople', 'startTime', 'endTime']),
   },
 };
 </script>
