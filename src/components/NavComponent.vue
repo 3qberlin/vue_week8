@@ -54,10 +54,10 @@ import cartPinia from '@/stores/cartPinia';
 
 export default {
   computed: {
-    ...mapState(cartPinia, ['carts', 'final_total', 'total']),
+    ...mapState(cartPinia, ['final_total', 'total']),
   },
   methods: {
-    ...mapActions(cartPinia, ['getCarts', 'pinia_carts']),
+    ...mapActions(cartPinia, ['getCarts', 'pinia_carts', 'carts']),
     closeMenu() {
       const navbarToggler = document.querySelector('.navbar-toggler');
       const navItem = document.querySelectorAll('.nav-item');
