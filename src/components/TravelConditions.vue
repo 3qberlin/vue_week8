@@ -3,21 +3,17 @@
     <h3 class="mb-3">旅行條件設定</h3>
     <div class="row g-12">
       <div class="col-lg-4">
-        <p class="m-1">日期</p>
+        <p class="m-1">出發日</p>
         <div class="p-2">
-          <Auto-Range></Auto-Range>
+          <input type="date" class="form-control" @change="getStart">
         </div>
       </div>
-      <!-- <div class="col-lg-4">
-        <p class="m-1">地點</p>
+      <div class="col-lg-4">
+        <p class="m-1">回程</p>
         <div class="p-2">
-          <select class="form-select" v-model="selectedLocation"
-           @change="setLocation($event.target.value)">
-            <option value="隨便" disabled selected>未選擇</option>
-            <option v-for="area in location" :key="area">{{ area }}</option>
-          </select>
+          <input type="date" class="form-control" @change="getEnd">
         </div>
-      </div> -->
+      </div>
       <div class="col-lg-4">
         <p class="m-1">
           人數<span class="text-danger ms-2">*</span>
@@ -43,17 +39,26 @@ import { mapActions, mapState } from 'pinia';
 
 import travelConditionsPinia from '@/stores/travelConditionsPinia';
 
-import AutoRange from '@/components/AutoRange.vue';
-
 export default {
-  components: {
-    AutoRange,
-  },
   methods: {
     ...mapActions(travelConditionsPinia, ['setPeople']),
+    getStart(event) {
+      const startTime = event.target.value;
+      console.log('startTime', startTime);
+    },
+    getEnd(event) {
+      const endTime = event.target.value;
+      console.log('endTime', endTime);
+    },
   },
   computed: {
     ...mapState(travelConditionsPinia, ['selectedPeople']),
+  },
+  data() {
+    return {
+      startTime: null,
+      endTime: null,
+    };
   },
 };
 </script>
