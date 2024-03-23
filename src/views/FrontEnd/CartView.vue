@@ -186,10 +186,10 @@ const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 export default {
   computed: {
-    ...mapState(cartPinia, ['final_total', 'total']),
+    ...mapState(cartPinia, ['final_total', 'total', 'carts']),
   },
   methods: {
-    ...mapActions(cartPinia, ['getCarts', 'pinia_carts', 'carts']),
+    ...mapActions(cartPinia, ['getCarts', 'pinia_carts']),
     addProduct(item) {
       const cart = {
         product_id: item.product_id,
