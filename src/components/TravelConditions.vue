@@ -3,19 +3,15 @@
     <h3 class="mb-3">旅行條件設定</h3>
     <div class="row g-12">
       <div class="col-lg-4">
-        <p class="m-1">日期</p>
+        <p class="m-1">出發日</p>
         <div class="p-2">
-          <Auto-Range></Auto-Range>
+          <input type="date" class="form-control" @change="getStart"  v-model="startTime">
         </div>
       </div>
       <div class="col-lg-4">
-        <p class="m-1">地點</p>
+        <p class="m-1">回程</p>
         <div class="p-2">
-          <select class="form-select"
-           @change="setLocation($event.target.value)">
-            <option value="隨便" disabled selected>未選擇</option>
-            <option v-for="area in location" :key="area">{{ area }}</option>
-          </select>
+          <input type="date" class="form-control" @change="getEnd" v-model="endTime">
         </div>
       </div>
       <div class="col-lg-4">
@@ -24,9 +20,9 @@
           <span class="fs-7 text-secondary"> 暫不接受所有寵物入住</span>
         </p>
         <div class="p-2">
-          <select class="form-select"
+          <select class="form-select" v-model="selectedPeople"
            @change="setPeople($event.target.value)">
-            <option value="隨便" disabled selected>
+            <option value="0" disabled selected>
               孩童視為成人，以一位計算
             </option>
             <option v-for="i in 10" :key="i">{{ i }}</option>
@@ -41,37 +37,14 @@
 <script>
 import { mapActions, mapState } from 'pinia';
 
-import AutoRange from '@/components/AutoRange.vue';
-
 import travelConditionsPinia from '@/stores/travelConditionsPinia';
 
 export default {
-  data() {
-    return {
-      location: [
-        '卡托卡尼',
-        '伊斯坦堡',
-        '聖保羅',
-        '布德瓦',
-        '本地治里市',
-        '克雷塔羅',
-        '波扎諾',
-        'Castel Hörtenberg',
-        '亞庇',
-        '艾美度假酒店',
-      ],
-      saveLocation: null, // 改为 null
-      savePeople: null,
-    };
-  },
-  components: {
-    AutoRange,
-  },
   methods: {
-    ...mapActions(travelConditionsPinia, ['setLocation', 'setPeople']),
+    ...mapActions(travelConditionsPinia, ['setPeople', 'getStart', 'getEnd']),
   },
   computed: {
-    ...mapState(travelConditionsPinia, ['selectedLocation', 'selectedPeople']),
+    ...mapState(travelConditionsPinia, ['selectedPeople', 'startTime', 'endTime']),
   },
 };
 </script>

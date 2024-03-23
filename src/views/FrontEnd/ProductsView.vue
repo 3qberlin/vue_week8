@@ -1,5 +1,5 @@
 <template>
-  <Travel-Conditions></Travel-Conditions>
+  <TravelConditions/>
   <div class="container mt-md-3 mt-2 mb-7">
     <div class="row">
       <div class="col-md-3">
