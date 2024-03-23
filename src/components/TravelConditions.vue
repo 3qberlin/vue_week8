@@ -11,7 +11,7 @@
       <div class="col-lg-4">
         <p class="m-1">地點</p>
         <div class="p-2">
-          <select class="form-select"
+          <select class="form-select" v-model="selectedLocation"
            @change="setLocation($event.target.value)">
             <option value="隨便" disabled selected>未選擇</option>
             <option v-for="area in location" :key="area">{{ area }}</option>
@@ -24,7 +24,7 @@
           <span class="fs-7 text-secondary"> 暫不接受所有寵物入住</span>
         </p>
         <div class="p-2">
-          <select class="form-select"
+          <select class="form-select" v-model="selectedPeople"
            @change="setPeople($event.target.value)">
             <option value="隨便" disabled selected>
               孩童視為成人，以一位計算
