@@ -24,8 +24,8 @@
               <p class="mb-0 fw-bold">{{ item.product.num }} 組</p>
             </div>
           </div>
+          <h4 class="fw-bold mb-4">訂單資料</h4>
           <table class="table mt-4 border-top border-bottom text-muted">
-            <h4 class="fw-bold mb-4">訂單資料</h4>
             <tbody>
               <tr>
                 <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">
