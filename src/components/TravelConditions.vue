@@ -11,7 +11,8 @@
       <div class="col-lg-4">
         <p class="m-1">地點</p>
         <div class="p-2">
-          <select class="form-select">
+          <select class="form-select"
+           @change="locationSaved($event.target.value)">
             <option value="隨便" disabled selected>未選擇</option>
             <option v-for="area in location" :key="area">{{ area }}</option>
           </select>
@@ -23,7 +24,8 @@
           <span class="fs-7 text-secondary"> 暫不接受所有寵物入住</span>
         </p>
         <div class="p-2">
-          <select class="form-select">
+          <select class="form-select"
+           @change="peopleSaved($event.target.value)">
             <option value="隨便" disabled selected>
               孩童視為成人，以一位計算
             </option>
@@ -54,10 +56,22 @@ export default {
         '亞庇',
         '艾美度假酒店',
       ],
+      saveLocation: null, // 改为 null
+      savePeople: null,
     };
   },
   components: {
     AutoRange,
+  },
+  methods: {
+    locationSaved(value) {
+      this.saveLocation = value; // 使用参数 value，而不是 this.el.target.value
+      console.log('this.saveLocation', this.saveLocation);
+    },
+    peopleSaved(value) {
+      this.savePeople = value; // 使用参数 value，而不是 this.el.target.value
+      console.log('this.savePeople', this.savePeople);
+    },
   },
 };
 </script>
