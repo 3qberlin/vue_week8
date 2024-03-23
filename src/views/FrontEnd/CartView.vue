@@ -1,5 +1,5 @@
 <template>
-  <TravelConditions/>
+  <TravelConditions />
   <div class="container">
     <div class="mt-3">
       <h3 class="mt-3 mb-4">購物車</h3>
@@ -45,7 +45,8 @@
                       <button
                         class="btn btn-outline-dark border-0 py-2"
                         type="button"
-                        id="button-addon1" @click="reduceProduct(item)"
+                        id="button-addon1"
+                        @click="reduceProduct(item)"
                       >
                         <i class="bi bi-dash"></i>
                       </button>
@@ -58,14 +59,15 @@
                       aria-describedby="button-addon1"
                       :value="item.qty"
                       :id="item.id"
-                      :qty = item.qty
+                      :qty="item.qty"
                       @change="updateQty($event, item)"
                     />
                     <div class="input-group-append">
                       <button
                         class="btn btn-outline-dark border-0 py-2"
                         type="button"
-                        id="button-addon2" @click="addProduct(item)"
+                        id="button-addon2"
+                        @click="addProduct(item)"
                       >
                         <i class="bi bi-plus-lg"></i>
                       </button>
@@ -91,8 +93,7 @@
               <p class="fs-5 text-center">
                 沒有任何商品，去<router-link
                   to="/products"
-                  class="fw-normal text-decoration-none
-                   btn btn-sm bg-dark mx-3 text-white"
+                  class="fw-normal text-decoration-none btn btn-sm bg-dark mx-3 text-white"
                   >產品一覽</router-link
                 >挑一個吧！
               </p>
@@ -128,20 +129,28 @@
               <tbody>
                 <tr>
                   <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">
-                    小計
+                    人數
                   </th>
                   <td class="text-end border-0 px-0 pt-4">
+                    {{ selectedPeople }}
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="border-0 px-0 font-weight-normal">
+                    小計
+                  </th>
+                  <td class="text-end border-0 px-0">
                     NT${{ this.total }}
                   </td>
                 </tr>
                 <tr>
                   <th
                     scope="row"
-                    class="border-0 px-0 pt-0 pb-4 font-weight-normal"
+                    class="border-0 px-0 pt-0 pb-4 pt-2 font-weight-normal"
                   >
                     付款方式
                   </th>
-                  <td class="text-end border-0 px-0 pt-0 pb-4">LinePay</td>
+                  <td class="text-end border-0 px-0 pt-0 pb-4 pt-2">LinePay</td>
                 </tr>
               </tbody>
             </table>
@@ -152,11 +161,16 @@
               </p>
               <p class="mb-0 h4 fw-bold" v-else>NT${{ this.total }}</p>
             </div>
-              <RouterLink
-              to="/checkout">
-            <button v-if="this.carts.length <= 0"
-               class="btn btn-dark w-100 mt-4" disabled tabindex="-1">先選購商品吧</button>
-            <button v-else class="btn btn-dark w-100 mt-4">送出訂單</button>
+            <RouterLink to="/checkout">
+              <button
+                v-if="this.carts.length <= 0"
+                class="btn btn-dark w-100 mt-4"
+                disabled
+                tabindex="-1"
+              >
+                先選購商品吧
+              </button>
+              <button v-else class="btn btn-dark w-100 mt-4">送出訂單</button>
             </RouterLink>
           </div>
         </div>
@@ -166,7 +180,8 @@
   <loading
     v-model:active="isLoading"
     :can-cancel="true"
-    :is-full-page="fullPage"/>
+    :is-full-page="fullPage"
+  />
 </template>
 
 <script>
@@ -182,14 +197,18 @@ import Swal from 'sweetalert2';
 
 import TravelConditions from '@/components/TravelConditions.vue';
 
+import travelConditionsPinia from '@/stores/travelConditionsPinia';
+
 const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 
 export default {
   computed: {
     ...mapState(cartPinia, ['final_total', 'total', 'carts']),
+    ...mapState(travelConditionsPinia, ['selectedPeople']),
   },
   methods: {
     ...mapActions(cartPinia, ['getCarts', 'pinia_carts']),
+    ...mapActions(travelConditionsPinia, ['setPeople']),
     addProduct(item) {
       const cart = {
         product_id: item.product_id,
@@ -251,8 +270,7 @@ export default {
         .then(() => {
           this.getCarts();
         })
-        .catch(() => {
-        });
+        .catch(() => {});
     },
     couponTicket() {
       const textContent = {
