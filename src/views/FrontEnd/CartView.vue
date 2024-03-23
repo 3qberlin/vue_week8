@@ -128,10 +128,30 @@
             <table class="table text-muted border-bottom">
               <tbody>
                 <tr>
-                  <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">
+                  <th scope="row" class="border-0 px-0 pt-4 font-weight-normal
+                  d-flex flex-grow-1">
+                    旅遊期間
+                  </th>
+                  <td v-if="!startTime || !endTime" class="text-end border-0 px-0 pt-4"
+                  >請選擇日期
+                  </td>
+                  <td v-else class="text-end border-0 px-0 pt-3 d-flex flex-wrap w-100">
+                    <div class="w-100">
+                    {{ startTime }}</div>
+                    <div class="w-100">
+                    {{ endTime }}</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="border-0 px-0 pt-3 font-weight-normal">
                     人數
                   </th>
-                  <td class="text-end border-0 px-0 pt-4">
+                  <td class="text-end border-0 px-0 pt-4"
+                   v-if="selectedPeople === '隨便'">
+                    0
+                  </td>
+                  <td class="text-end border-0 px-0 pt-3"
+                   v-else>
                     {{ selectedPeople }}
                   </td>
                 </tr>
@@ -204,7 +224,7 @@ const { VITE_API_URL, VITE_API_NAME } = import.meta.env;
 export default {
   computed: {
     ...mapState(cartPinia, ['final_total', 'total', 'carts']),
-    ...mapState(travelConditionsPinia, ['selectedPeople']),
+    ...mapState(travelConditionsPinia, ['selectedPeople', 'startTime', 'endTime']),
   },
   methods: {
     ...mapActions(cartPinia, ['getCarts', 'pinia_carts']),
