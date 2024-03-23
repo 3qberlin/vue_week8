@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    {{ startTime }}
+    {{ endTime }}
+    {{ selectedPeople }}
     <h3 class="mb-3">旅行條件設定</h3>
     <div class="row g-12">
       <div class="col-lg-4">
@@ -42,14 +45,6 @@ import travelConditionsPinia from '@/stores/travelConditionsPinia';
 export default {
   methods: {
     ...mapActions(travelConditionsPinia, ['setPeople', 'getStart', 'getEnd']),
-    getStart(event) {
-      const startTime = event.target.value;
-      console.log('startTime', startTime);
-    },
-    getEnd(event) {
-      const endTime = event.target.value;
-      console.log('endTime', endTime);
-    },
   },
   computed: {
     ...mapState(travelConditionsPinia, ['selectedPeople', 'startTime', 'endTime']),

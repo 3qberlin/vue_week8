@@ -15,20 +15,21 @@ export default defineStore('travelConditionsPinia', {
       '亞庇',
       '艾美度假酒店',
     ],
-    startTime: null,
-    endTime: null,
+    startTime: '',
+    endTime: '',
   }),
   actions: {
     setPeople(people) {
       this.selectedPeople = people;
     },
     getStart(event) {
-      const startTime = event.target.value;
-      console.log('startTime', startTime);
+      this.startTime = event.target.value;
+      console.log('startTime', this.startTime);
+      console.log(typeof this.startTime);
     },
     getEnd(event) {
-      const endTime = event.target.value;
-      console.log('endTime', endTime);
+      this.endTime = event.target.value;
+      console.log('endTime', this.endTime);
     },
   },
 });
