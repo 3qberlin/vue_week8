@@ -24,12 +24,9 @@ export default defineStore('travelConditionsPinia', {
     },
     getStart(event) {
       this.startTime = event.target.value;
-      console.log('startTime', this.startTime);
-      console.log(typeof this.startTime);
     },
     getEnd(event) {
       this.endTime = event.target.value;
-      console.log('endTime', this.endTime);
     },
   },
 });
