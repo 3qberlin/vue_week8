@@ -12,7 +12,7 @@
         <p class="m-1">地點</p>
         <div class="p-2">
           <select class="form-select"
-           @change="locationSaved($event.target.value)">
+           @change="setLocation($event.target.value)">
             <option value="隨便" disabled selected>未選擇</option>
             <option v-for="area in location" :key="area">{{ area }}</option>
           </select>
@@ -25,7 +25,7 @@
         </p>
         <div class="p-2">
           <select class="form-select"
-           @change="peopleSaved($event.target.value)">
+           @change="setPeople($event.target.value)">
             <option value="隨便" disabled selected>
               孩童視為成人，以一位計算
             </option>
@@ -39,39 +39,21 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'pinia';
+
+import travelConditionsPinia from '@/stores/travelConditionsPinia';
+
 import AutoRange from '@/components/AutoRange.vue';
 
 export default {
-  data() {
-    return {
-      location: [
-        '卡托卡尼',
-        '伊斯坦堡',
-        '聖保羅',
-        '布德瓦',
-        '本地治里市',
-        '克雷塔羅',
-        '波扎諾',
-        'Castel Hörtenberg',
-        '亞庇',
-        '艾美度假酒店',
-      ],
-      saveLocation: null, // 改为 null
-      savePeople: null,
-    };
-  },
   components: {
     AutoRange,
   },
   methods: {
-    locationSaved(value) {
-      this.saveLocation = value; // 使用参数 value，而不是 this.el.target.value
-      console.log('this.saveLocation', this.saveLocation);
-    },
-    peopleSaved(value) {
-      this.savePeople = value; // 使用参数 value，而不是 this.el.target.value
-      console.log('this.savePeople', this.savePeople);
-    },
+    ...mapActions(travelConditionsPinia, ['setLocation', 'setPeople']),
+  },
+  computed: {
+    ...mapState(travelConditionsPinia, ['selectedLocation', 'selectedPeople', 'location']),
   },
 };
 </script>
